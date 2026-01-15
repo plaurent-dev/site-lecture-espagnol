@@ -37,6 +37,7 @@
                 <img id="bonusPhoto" src="" alt="Joueur" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
                 <div class="word-display" id="bonusNickname" style="font-size: 1.3em;">Joueur</div>
                 <div class="word-label" id="bonusQuestion" style="margin-top: 20px;">Question</div>
+                <div id="bonusAnswer" style="display: none; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.2); border-radius: 8px; font-size: 1.2em; font-weight: bold; color: #26D07C;">La bonne réponse: <span id="bonusAnswerText"></span></div>
             </div>
             <div class="quiz-options" id="bonusOptions"></div>
         </div>
@@ -268,10 +269,15 @@
                         b.disabled = true;
                         if (b.textContent === bonusAnswer) b.classList.add('correct');
                     });
+                    // Afficher la bonne réponse si erreur
+                    if (!correct) {
+                        document.getElementById('bonusAnswerText').textContent = bonusAnswer;
+                        document.getElementById('bonusAnswer').style.display = 'block';
+                    }
                     setTimeout(() => {
                         document.getElementById('bonusContainer').style.display = 'none';
                         document.getElementById('gameOverContainer').style.display = 'block';
-                    }, 1500);
+                    }, 2000);
                 };
                 container.appendChild(btn);
             });
