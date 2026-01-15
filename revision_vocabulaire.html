@@ -2,829 +2,75 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Révision du vocabulaire espagnol - Kahoot Style</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>Quiz Espagnol Léonard</title>
     <style>
-        :root {
-            --kahoot-red: #F7185F;
-            --kahoot-blue: #0066FF;
-            --kahoot-green: #26D07C;
-            --kahoot-yellow: #FFB800;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--kahoot-blue) 0%, #667eea 100%);
-            min-height: 100vh;
-            padding: 0;
-            margin: 0;
-            color: #333;
-        }
-
-        .navbar {
-            background: linear-gradient(90deg, var(--kahoot-red) 0%, var(--kahoot-blue) 100%);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar h1 {
-            color: white;
-            font-size: 1.8em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            max-width: 900px;
-            margin: 30px auto;
-        }
-
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 12px 20px;
-            background: white;
-            color: var(--kahoot-red);
-            border: 2px solid white;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        .back-btn:hover {
-            background: var(--kahoot-red);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(247, 24, 95, 0.4);
-        }
-
-        .card-vocabulary {
-            background: linear-gradient(135deg, var(--kahoot-blue) 0%, #667eea 100%);
-            color: white;
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .word-label {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            opacity: 0.95;
-            letter-spacing: 0.5px;
-        }
-
-        .word-display {
-            font-size: 3.5em;
-            font-weight: 800;
-            margin: 20px 0;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-            word-break: break-word;
-            letter-spacing: 1px;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .option-btn {
-            padding: 25px 20px;
-            font-size: 1.1em;
-            font-weight: 700;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            text-align: center;
-            word-break: break-word;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .option-btn:nth-child(1) {
-            background: linear-gradient(135deg, var(--kahoot-red) 0%, #E61250 100%);
-        }
-
-        .option-btn:nth-child(2) {
-            background: linear-gradient(135deg, var(--kahoot-blue) 0%, #0052CC 100%);
-        }
-
-        .option-btn:nth-child(3) {
-            background: linear-gradient(135deg, var(--kahoot-yellow) 0%, #FF9900 100%);
-        }
-
-        .option-btn:nth-child(4) {
-            background: linear-gradient(135deg, var(--kahoot-green) 0%, #1BB368 100%);
-        }
-
-        .option-btn:hover:not(:disabled) {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .option-btn:active:not(:disabled) {
-            transform: scale(0.98);
-        }
-
-        .option-btn:disabled {
-            cursor: not-allowed;
-        }
-
-        .option-btn.correct {
-            background: linear-gradient(135deg, var(--kahoot-green) 0%, #1BB368 100%);
-            animation: pulseGreen 0.6s ease;
-        }
-
-        .option-btn.incorrect {
-            background: linear-gradient(135deg, #999 0%, #666 100%);
-            animation: shake 0.4s ease;
-        }
-
-        @keyframes pulseGreen {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
-        }
-
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .score-display {
-            font-size: 1.4em;
-            font-weight: 800;
-            color: var(--kahoot-red);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 12px;
-            background: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--kahoot-red) 0%, var(--kahoot-green) 100%);
-            transition: width 0.3s ease;
-            border-radius: 10px;
-        }
-
-        .game-over {
-            text-align: center;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, var(--kahoot-red) 0%, var(--kahoot-blue) 100%);
-            color: white;
-            border-radius: 16px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .game-over h2 {
-            font-size: 3em;
-            margin: 20px 0;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            animation: bounce 0.6s ease;
-        }
-
-        .game-over .final-score {
-            font-size: 2.5em;
-            margin: 20px 0;
-            font-weight: 800;
-        }
-
-        .game-over .percentage {
-            font-size: 1.3em;
-            opacity: 0.95;
-            margin: 15px 0;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.1em;
-            font-weight: 700;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--kahoot-red) 0%, var(--kahoot-blue) 100%);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-result {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .header-result-text {
-            font-size: 1.2em;
-            font-weight: 800;
-            padding: 12px 25px;
-            border-radius: 10px;
-            min-width: 150px;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .header-result-text.correct {
-            background: linear-gradient(135deg, var(--kahoot-green) 0%, #1BB368 100%);
-            color: white;
-            box-shadow: 0 4px 10px rgba(38, 208, 124, 0.3);
-        }
-
-        .header-result-text.incorrect {
-            background: linear-gradient(135deg, #999 0%, #666 100%);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .settings-section {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .settings-section label {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .settings-section select {
-            padding: 10px 15px;
-            border: 2px solid var(--kahoot-blue);
-            border-radius: 8px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: white;
-            font-weight: 600;
-        }
-
-        @media (max-width: 600px) {
-            .quiz-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .word-display {
-                font-size: 2.5em;
-            }
-            
-            .card-vocabulary {
-                padding: 30px 20px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Segoe UI, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .navbar { background: linear-gradient(90deg, #F7185F 0%, #0066FF 100%); color: white; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; padding: 30px; }
+        .back-btn { position: fixed; top: 20px; left: 20px; padding: 10px 20px; background: white; color: #667eea; border-radius: 5px; text-decoration: none; font-weight: bold; z-index: 1000; }
+        .header-section { display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
+        .score-display { font-size: 1.5em; font-weight: bold; color: #0066FF; }
+        .header-result { display: flex; align-items: center; gap: 10px; }
+        .header-result-text { font-size: 1.1em; font-weight: 600; padding: 10px 15px; border-radius: 5px; }
+        .header-result-text.correct { color: #26D07C; background: #E8F5E9; }
+        .header-result-text.incorrect { color: #F7185F; background: #FFEBEE; }
+        .settings-section { display: flex; gap: 20px; align-items: center; }
+        .settings-section label { font-weight: 600; }
+        .settings-section select { padding: 8px 12px; border: 2px solid #0066FF; border-radius: 5px; }
+        .progress-bar { width: 100%; height: 8px; background: #E0E0E0; border-radius: 10px; overflow: hidden; margin-bottom: 30px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #0066FF, #26D07C); transition: width 0.3s; }
+        .card-vocabulary { background: linear-gradient(135deg, #0066FF 0%, #6366FF 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .word-display { font-size: 2.5em; font-weight: bold; margin-bottom: 20px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
+        .option-btn { padding: 20px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; color: white; transition: all 0.3s; }
+        .option-btn:nth-child(1) { background: linear-gradient(135deg, #F7185F, #FF6B6B); }
+        .option-btn:nth-child(2) { background: linear-gradient(135deg, #0066FF, #6366FF); }
+        .option-btn:nth-child(3) { background: linear-gradient(135deg, #FFB800, #FFC107); }
+        .option-btn:nth-child(4) { background: linear-gradient(135deg, #26D07C, #4CAF50); }
+        .option-btn:disabled { opacity: 0.8; cursor: not-allowed; }
+        .option-btn.correct { background: linear-gradient(135deg, #26D07C, #4CAF50); }
+        .option-btn.incorrect { background: #ccc; color: #666; }
+        .btn { padding: 12px 30px; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, #0066FF, #6366FF); color: white; }
+        .game-over { text-align: center; padding: 40px; }
+        .game-over h2 { font-size: 2.5em; color: #333; margin-bottom: 20px; }
+        .final-score { font-size: 2em; color: #0066FF; font-weight: bold; margin-bottom: 15px; }
+        @media (max-width: 600px) { .quiz-options { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-btn">← Retour</a>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <h1>🚀 Espagnol Léonard</h1>
-            <div style="flex: 1; text-align: center;">
-                <span id="navTitle" style="font-size: 1.1em; font-weight: 600; color: white;">Quiz Vocabulaire 🇪🇸</span>
-            </div>
-            <div class="navbar-buttons"></div>
-        </div>
-    </nav>
-
+    <div class="navbar"><h1>📚 ES - Quiz Vocabulaire 🇪🇸 → 🇫🇷</h1></div>
     <div class="container">
         <div class="header-section">
-            <div class="header-left">
-                <div class="score-display">
-                    🎯 <span id="scoreValue">0</span>/<span id="maxQuestions">10</span>
-                </div>
-                <div class="header-result" id="headerResult" style="display: none;">
-                    <div class="header-result-text" id="headerResultText"></div>
-                    <button class="btn btn-primary" onclick="nouvelMot()" style="padding: 8px 20px; font-size: 0.95em;">Suivant →</button>
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <label for="numQuestions">Questions :</label>
-                <select id="numQuestions" onchange="changerNombreQuestions()">
-                    <option value="10" selected>10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-            </div>
+            <div class="score-display">🎯 <span id="scoreValue">0</span>/<span id="maxQuestions">10</span></div>
+            <div class="header-result" id="headerResult" style="display: none;"><div class="header-result-text" id="headerResultText"></div></div>
+            <div class="settings-section"><label>Questions :</label><select id="numQuestions" onchange="changerNombreQuestions()"><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option></select></div>
         </div>
-
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-        </div>
-
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
         <div id="gameContainer">
-            <div class="card-vocabulary" id="vocabularyCard">
-                <div class="word-label" id="questionLabel">Traduis en français :</div>
-                <div class="word-display" id="wordDisplay">Chargement...</div>
-            </div>
-
+            <div class="card-vocabulary"><div class="word-label" id="questionLabel">Traduis en français :</div><div class="word-display" id="wordDisplay">Chargement...</div></div>
             <div class="quiz-options" id="quizOptions"></div>
-
-            <div class="controls" style="text-align: center; margin-top: 30px;">
-                <button class="btn btn-primary" id="nextBtn" onclick="nouvelMot()" style="display: none;">Question suivante →</button>
-            </div>
         </div>
-
-        <div id="gameOverContainer" style="display: none;">
-            <div class="game-over">
-                <h2>🎉 Bravo !</h2>
-                <div class="final-score">
-                    <span id="finalScore">0</span>/<span id="finalMax">10</span> bonnes réponses
-                </div>
-                <div class="percentage">
-                    <span id="percentageValue">0</span>% de réussite 🌟
-                </div>
-                <button class="btn btn-primary" onclick="recommencer()" style="margin-top: 30px;">Recommencer</button>
-            </div>
-        </div>
+        <div id="gameOverContainer" style="display: none;"><div class="game-over"><h2>🎉 Quiz terminé !</h2><div class="final-score">Score : <span id="finalScore">0</span>/<span id="finalMax">10</span></div><div style="font-size: 1.5em; color: #26D07C; margin-bottom: 30px;"><span id="percentageValue">0</span>%</div><button class="btn btn-primary" onclick="recommencer()">Recommencer</button></div></div>
     </div>
-
-    <script>
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        .back-btn:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .back-btn:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 600px) {
-            .back-btn {
-                padding: 10px 16px;
-                font-size: 0.9em;
-            }
-        }
-
-        
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .header-left {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .score-display {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--primary);
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .mode-display {
-            font-size: 1em;
-            font-weight: 500;
-            color: var(--secondary);
-            padding: 8px 15px;
-            background-color: var(--bg-light);
-            border-radius: 6px;
-        }
-
-        .settings-section {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .settings-section label {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .settings-section select {
-            padding: 8px 12px;
-            border: 2px solid var(--secondary);
-            border-radius: 6px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: white;
-        }
-
-        .mode-selector-inline {
-            display: flex;
-            gap: 10px;
-        }
-
-        .mode-btn {
-            padding: 8px 15px;
-            border: 2px solid var(--secondary);
-            border-radius: 6px;
-            background: white;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .mode-btn:hover {
-            background-color: var(--bg-light);
-        }
-
-        .mode-btn.active {
-            background-color: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            margin: 15px 0;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        .quiz-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .option-btn {
-            padding: 18px;
-            border: 2px solid var(--secondary);
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .option-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
-            background-color: var(--bg-light);
-        }
-
-        .option-btn.correct {
-            border-color: #2e7d32;
-            background-color: #2e7d32;
-            color: white;
-        }
-
-        .option-btn.incorrect {
-            border-color: #c62828;
-            background-color: #c62828;
-            color: white;
-        }
-
-        .option-btn:disabled {
-            cursor: not-allowed;
-        }
-
-        .word-display {
-            font-size: 2em;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .card-vocabulary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        .card-vocabulary .word-label {
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            opacity: 1;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .card-vocabulary .word-display {
-            color: white;
-            margin: 30px 0;
-            font-size: 3em;
-            font-weight: 700;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-            word-break: break-word;
-        }
-
-        .card-vocabulary .pluriel {
-            font-size: 1.1em;
-            opacity: 1;
-            margin-top: 20px;
-            font-weight: 600;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 6px;
-        }
-
-        .result {
-            text-align: center;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin: 15px 0;
-            padding: 15px;
-            border-radius: 6px;
-        }
-
-        .result.correct {
-            background-color: #c8e6c9;
-            color: #2e7d32;
-        }
-
-        .result.incorrect {
-            background-color: #ffcdd2;
-            color: #c62828;
-        }
-
-        .game-over {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        .game-over h2 {
-            font-size: 2em;
-            margin: 20px 0;
-        }
-
-        .game-over .final-score {
-            font-size: 1.5em;
-            margin: 15px 0;
-        }
-
-        .game-over .percentage {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .speak-btn {
-            background-color: rgba(255, 255, 255, 0.35);
-            border: 3px solid white;
-            color: white;
-            padding: 14px 30px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: 700;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .speak-btn:hover {
-            background-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.08);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .speak-btn:active {
-            transform: scale(0.95);
-        }
-
-        .header-result {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .header-result-text {
-            font-size: 1.1em;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            min-width: 150px;
-            text-align: center;
-        }
-
-        .header-result-text.correct {
-            background-color: #c8e6c9;
-            color: #2e7d32;
-        }
-
-        .header-result-text.incorrect {
-            background-color: #ffcdd2;
-            color: #c62828;
-        }
-
-        .header-next-btn {
-            padding: 10px 20px;
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .header-next-btn:hover {
-            background-color: var(--secondary-dark);
-            transform: translateY(-2px);
-        }
-
-        .header-next-btn:active {
-            transform: scale(0.95);
-        }
-    </style>
-</head>
-<body>
-    <a href="index.html" class="back-btn">← Retour</a>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <h1>📚 ES</h1>
-            <div style="flex: 1; text-align: center;">
-                <span id="navTitle" style="font-size: 1.1em; font-weight: 600; color: white;">Révision du vocabulaire (ES → FR)</span>
-            </div>
-            <div class="navbar-buttons">
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="header-section">
-            <div class="header-left">
-                <div class="score-display">
-                    📊 <span id="scoreValue">0</span>/<span id="maxQuestions">10</span>
-                </div>
-                <div class="mode-display" id="modeDisplay">�🇸 → 🇫🇷</div>
-                <div class="header-result" id="headerResult" style="display: none;">
-                    <div class="header-result-text" id="headerResultText"></div>
-                    <button class="header-next-btn" onclick="nouvelMot()">🔄 Suivant</button>
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <label for="numQuestions">Questions :</label>
-                <select id="numQuestions" onchange="changerNombreQuestions()">
-                    <option value="10" selected>10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-
-                <label for="modeSelect" style="margin-left: 20px;">Mode :</label>
-                <div class="mode-selector-inline">
-                    <button class="mode-btn active" onclick="changerMode('es-to-fr')">🇪🇸 → 🇫🇷</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-        </div>
-
-        <div id="gameContainer">
-            <div class="card-vocabulary" id="vocabularyCard">
-                <div class="word-label" id="questionLabel">Traduis en français :</div>
-                <div class="word-display" id="wordDisplay">Chargement...</div>
-                <button class="speak-btn" id="speakBtn" onclick="prononcer()" style="display: none;">
-                    🔊 Écouter
-                </button>
-                <div class="pluriel" id="plurielDisplay" style="display: none;"></div>
-            </div>
-
-            <div class="quiz-options" id="quizOptions"></div>
-
-            <div class="result" id="result"></div>
-
-            <div class="controls" style="text-align: center; margin-top: 20px;">
-                <button class="btn btn-primary" id="nextBtn" onclick="nouvelMot()" style="display: none;">🔄 Question suivante</button>
-            </div>
-        </div>
-
-        <div id="gameOverContainer" style="display: none;">
-            <div class="game-over">
-                <h2>🎉 Quiz terminé !</h2>
-                <div class="final-score">
-                    Ton score : <span id="finalScore">0</span>/<span id="finalMax">10</span>
-                </div>
-                <div class="percentage">
-                    <span id="percentageValue">0</span>% de bonnes réponses
-                </div>
-                <button class="btn btn-primary" onclick="recommencer()" style="margin-top: 20px;">Recommencer</button>
-            </div>
-        </div>
-    </div>
-
     <script>
         let vocabulaireList = [];
         let motActuel = null;
         let score = 0;
         let totalQuestions = 0;
         let maxQuestions = 10;
-        let quizTermine = false;
 
         async function chargerVocabulaire() {
             try {
-                const response = await fetch('vocabulaire.json?t=' + Date.now());
-                if (!response.ok) {
-                    throw new Error(`Erreur HTTP: ${response.status}`);
-                }
-                const data = await response.json();
-                if (!data.vocabulaire_A1_A2 || data.vocabulaire_A1_A2.length === 0) {
-                    throw new Error('Aucun vocabulaire trouvé');
-                }
+                const data = await fetch('vocabulaire.json?t=' + Date.now()).then(r => r.json());
                 vocabulaireList = data.vocabulaire_A1_A2;
                 nouvelMot();
-            } catch (error) {
-                console.error('Erreur de chargement:', error);
-                document.getElementById('wordDisplay').textContent = '❌ Erreur: Impossible de charger vocabulaire.json';
+            } catch(e) {
+                console.error('Erreur:', e);
+                document.getElementById('wordDisplay').textContent = 'Erreur';
             }
         }
 
@@ -837,128 +83,62 @@
         function reinitialiserQuiz() {
             score = 0;
             totalQuestions = 0;
-            quizTermine = false;
             document.getElementById('scoreValue').textContent = '0';
             document.getElementById('gameContainer').style.display = 'block';
             document.getElementById('gameOverContainer').style.display = 'none';
-            updateProgressBar();
+            document.getElementById('progressFill').style.width = '0%';
             nouvelMot();
         }
 
         function nouvelMot() {
             if (totalQuestions >= maxQuestions) {
-                afficherFinQuiz();
+                const percentage = Math.round((score / maxQuestions) * 100);
+                document.getElementById('finalScore').textContent = score;
+                document.getElementById('finalMax').textContent = maxQuestions;
+                document.getElementById('percentageValue').textContent = percentage;
+                document.getElementById('gameContainer').style.display = 'none';
+                document.getElementById('gameOverContainer').style.display = 'block';
                 return;
             }
 
-            document.getElementById('result').textContent = '';
-            document.getElementById('nextBtn').style.display = 'none';
-
-            const randomIndex = Math.floor(Math.random() * vocabulaireList.length);
-            motActuel = vocabulaireList[randomIndex];
-
-            afficherMot();
-            genererOptionsReponse();
-        }
-
-        function afficherMot() {
+            const idx = Math.floor(Math.random() * vocabulaireList.length);
+            motActuel = vocabulaireList[idx];
             document.getElementById('wordDisplay').textContent = motActuel.espagnol_singulier;
-            document.getElementById('questionLabel').textContent = 'Traduis en français :';
-        }
+            document.getElementById('headerResult').style.display = 'none';
 
-        function genererOptionsReponse() {
             let bonneReponse = motActuel.francais;
             let options = [bonneReponse];
-
             while (options.length < 4) {
-                const randomIndex = Math.floor(Math.random() * vocabulaireList.length);
-                const candidat = vocabulaireList[randomIndex].francais;
-
-                if (!options.includes(candidat) && candidat !== bonneReponse) {
-                    options.push(candidat);
-                }
+                const c = vocabulaireList[Math.floor(Math.random() * vocabulaireList.length)].francais;
+                if (!options.includes(c)) options.push(c);
             }
-
             options = options.sort(() => Math.random() - 0.5);
 
-            const quizOptions = document.getElementById('quizOptions');
-            quizOptions.innerHTML = '';
-
-            options.forEach((option) => {
+            const container = document.getElementById('quizOptions');
+            container.innerHTML = '';
+            options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
-                btn.textContent = option;
-                btn.onclick = () => validerOption(option, bonneReponse, btn);
-                quizOptions.appendChild(btn);
+                btn.textContent = opt;
+                btn.onclick = () => {
+                    totalQuestions++;
+                    const correct = opt === bonneReponse;
+                    if (correct) { score++; document.getElementById('scoreValue').textContent = score; btn.classList.add('correct'); document.getElementById('headerResultText').innerHTML = '✓ Correct !'; document.getElementById('headerResultText').className = 'header-result-text correct'; }
+                    else { btn.classList.add('incorrect'); document.getElementById('headerResultText').innerHTML = '✗ Incorrect'; document.getElementById('headerResultText').className = 'header-result-text incorrect'; }
+                    document.getElementById('progressFill').style.width = ((totalQuestions / maxQuestions) * 100) + '%';
+                    document.getElementById('headerResult').style.display = 'flex';
+                    document.querySelectorAll('.option-btn').forEach(b => { b.disabled = true; if (b.textContent === bonneReponse) b.classList.add('correct'); });
+                    setTimeout(() => nouvelMot(), 1500);
+                };
+                container.appendChild(btn);
             });
-        }
-
-        function validerOption(option, bonneReponse, btnElement) {
-            const isCorrect = option === bonneReponse;
-            totalQuestions++;
-
-            if (isCorrect) {
-                score++;
-                document.getElementById('scoreValue').textContent = score;
-                btnElement.classList.add('correct');
-                document.getElementById('headerResultText').className = 'header-result-text correct';
-                document.getElementById('headerResultText').innerHTML = '✓ Correct !';
-            } else {
-                btnElement.classList.add('incorrect');
-                document.getElementById('headerResultText').className = 'header-result-text incorrect';
-                document.getElementById('headerResultText').innerHTML = '✗ Incorrect';
-            }
-
-            document.getElementById('headerResult').style.display = 'flex';
-            document.querySelectorAll('.option-btn').forEach(btn => {
-                btn.disabled = true;
-                if (btn.textContent === bonneReponse) {
-                    btn.classList.add('correct');
-                }
-            });
-
-            updateProgressBar();
-            document.getElementById('nextBtn').style.display = 'block';
-        }
-
-        function updateProgressBar() {
-            const progress = (totalQuestions / maxQuestions) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-        }
-
-        function afficherFinQuiz() {
-            quizTermine = true;
-            const percentage = Math.round((score / maxQuestions) * 100);
-            
-            document.getElementById('finalScore').textContent = score;
-            document.getElementById('finalMax').textContent = maxQuestions;
-            document.getElementById('percentageValue').textContent = percentage;
-
-            document.getElementById('gameContainer').style.display = 'none';
-            document.getElementById('gameOverContainer').style.display = 'block';
         }
 
         function recommencer() {
             reinitialiserQuiz();
         }
 
-        function prononcer() {
-            if (!motActuel) return;
-            
-            const wordToPronounce = motActuel.espagnol_singulier;
-            const utterance = new SpeechSynthesisUtterance(wordToPronounce);
-            utterance.lang = 'es-ES';
-            utterance.rate = 0.85;
-            utterance.pitch = 1;
-            utterance.volume = 1;
-            
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(utterance);
-        }
-
-        window.addEventListener('load', () => {
-            chargerVocabulaire();
-        });
+        window.addEventListener('load', () => chargerVocabulaire());
     </script>
 </body>
 </html>
