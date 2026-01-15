@@ -3,522 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espagnol Léonard</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>¡Aprende Español con Léonard!</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #F9FAFB;
-            min-height: 100vh;
-            padding: 0;
-            color: #1F2937;
-            line-height: 1.6;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: #3B82F6;
-            padding: 0 40px;
-            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .navbar h1 {
-            color: white;
-            font-size: 1.5em;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .navbar-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .navbar-link {
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            background: rgba(255, 255, 255, 0.2);
-            font-size: 0.95em;
-        }
-
-        .navbar-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .navbar-link.admin {
-            background: #0D9488;
-            color: white;
-        }
-
-        .navbar-link.admin:hover {
-            background: #0F766E;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-            margin: 40px 20px;
-        }
-
-        h1 {
-            color: #3B82F6;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #6B7280;
-            margin-bottom: 40px;
-            font-size: 1.1em;
-            font-weight: 500;
-        }
-
-        /* Section Récentes */
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section h2 {
-            color: #3B82F6;
-            margin-bottom: 25px;
-            font-size: 1.8em;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #DBEAFE;
-            font-weight: 700;
-        }
-
-        .fiches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .fiche-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid #E5E7EB;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: relative;
-            font-size: 0.85em;
-        }
-
-        .fiche-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
-            border-color: #3B82F6;
-        }
-
-        .fiche-card h3 {
-            color: #1F2937;
-            font-size: 1em;
-            margin-bottom: 10px;
-            word-break: break-word;
-            font-weight: 600;
-        }
-
-        .fiche-card p {
-            color: #6B7280;
-            font-size: 0.85em;
-            margin: 8px 0;
-        }
-
-        .fiche-card .region {
-            font-weight: 600;
-            color: #1F2937;
-        }
-
-        .fiche-card .date {
-            font-size: 0.8em;
-            color: #9CA3AF;
-        }
-
-        .fiche-card button {
-            width: 100%;
-            background: #EF4444;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 15px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
-        }
-
-        .fiche-card button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-            background: #DC2626;
-        }
-
-        .btn-delete {
-            background: #EF4444;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8em;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .fiche-card:hover .btn-delete {
-            opacity: 1;
-        }
-
-        .btn-delete:hover {
-            background: #DC2626;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px;
-            color: #9CA3AF;
-            font-style: italic;
-            grid-column: 1 / -1;
-        }
-
-        /* Section Recherche */
-        .search-section {
-            background: #F3F4F6;
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 30px;
-            border: 1px solid #E5E7EB;
-        }
-
-        .search-filters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .filter-group label {
-            color: #1F2937;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .filter-group input,
-        .filter-group select {
-            padding: 12px;
-            border: 2px solid #D1D5DB;
-            border-radius: 8px;
-            font-family: 'Inter', 'Lexend', sans-serif;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-            background: white;
-            color: #1F2937;
-        }
-
-        .filter-group input:focus,
-        .filter-group select:focus {
-            outline: none;
-            border-color: #3B82F6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .search-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .btn-search {
-            background: #EF4444;
-            color: white;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.05em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
-        }
-
-        .btn-search:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-            background: #DC2626;
-        }
-
-        .btn-reset {
-            background: #0D9488;
-            color: white;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.05em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.2);
-        }
-
-        .btn-reset:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
-            background: #0F766E;
-        }
-
-        .search-results h3 {
-            color: #3B82F6;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            font-weight: 600;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background: #0D9488;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: #0F766E;
-            transform: translateY(-2px);
-        }
-
-        .info-box {
-            background: #DBEAFE;
-            border-left: 4px solid #3B82F6;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            color: #1E40AF;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .modal h2 {
-            color: #3B82F6;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .modal input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #D1D5DB;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 1em;
-            font-family: 'Inter', 'Lexend', sans-serif;
-            color: #1F2937;
-        }
-
-        .modal input:focus {
-            outline: none;
-            border-color: #3B82F6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .modal-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .modal-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .modal-btn-add {
-            background: #EF4444;
-            color: white;
-            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
-        }
-
-        .modal-btn-add:hover {
-            background: #DC2626;
-        }
-
-        .modal-btn-cancel {
-            background: #E5E7EB;
-            color: #1F2937;
-        }
-
-        .modal-btn-cancel:hover {
-            background: #D1D5DB;
-        }
-
-        .navbar-right {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .user-info {
-            color: white;
-            font-size: 0.9em;
-            padding: 0 15px;
-            font-weight: 500;
-        }
-
-        #userEmail {
-            color: #FACC15;
-            font-weight: 600;
-        }
-
-        .fiche-image {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-            margin: -25px -25px 15px -25px;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-toggle {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95em;
-            transition: all 0.3s;
-        }
-
-        .dropdown-toggle:hover,
-        .dropdown-toggle:focus {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 110%;
-            background: white;
-            min-width: 180px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            border-radius: 8px;
-            z-index: 1000;
-            padding: 8px 0;
-        }
-
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item {
-            color: #1F2937;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: background 0.2s;
-        }
-
-        .dropdown-item:hover {
-            background: #F3F4F6;
-        }
-
-        .dropdown-item.admin-item {
-            color: #0D9488;
-            font-weight: 700;
-        }
-
-        .dropdown-item.admin-item:hover {
-            background: #D1F9F3;
-        }
-    </style>
 </head>
 
 <body>
@@ -526,38 +12,130 @@
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar-content">
-        <h1>📚 ES</h1>
-        <div class="navbar-buttons">
-        </div>
+        <h1>¡Aprende Español! 🇪🇸</h1>
     </div>
 </nav>
 
 <div class="container">
-    <h1 style="margin-top: 0;">Espagnol Léonard</h1>
-    <p class="subtitle">Apprentissage de l'espagnol pour la 5ème</p>
+    <h1>Bienvenido, Léonard!</h1>
+    <p class="subtitle">Tu plataforma de aprendizaje de español - Nivel 5ème</p>
 
-    <!-- Section Vocabulaire Quiz -->
-    <div class="section">
-        <h2>📝 Quiz Vocabulaire</h2>
-        <a href="revision_vocabulaire.html" style="text-decoration: none;">
-            <div class="fiche-card" style="cursor: pointer; border: 3px dashed #3B82F6; text-align: center; padding: 35px 25px;">
-                <div style="font-size: 3em; margin-bottom: 15px;">🚀</div>
-                <h3 style="color: #3B82F6; margin: 10px 0; font-size: 1.3em;\">Quiz Vocabulaire Espagnol</h3>
-                <p style="color: #6B7280; margin: 10px 0; font-size: 0.95em;\">Teste ton vocabulaire avec notre quiz interactif style Kahoot !</p>
-                <p style="font-size: 0.85em; color: #9CA3AF; margin: 15px 0;\">🎯 4 options • ⏱️ Temps réel • 📊 Scoring</p>
-                <div style="background: linear-gradient(135deg, #F7185F 0%, #0066FF 100%); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; margin-top: 15px; font-weight: 600; width: 100%; display: inline-block;\">Commencer le quiz →</div>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>¡Comienza tu aventura lingüística!</h2>
+        <p>Aprende vocabulario, domina los verbos y mejora tu español cada día</p>
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">266</div>
+                <div class="stat-label">Palabras</div>
             </div>
-        </a>
+            <div class="stat-box">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Verbos</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Posibilidades</div>
+            </div>
+        </div>
     </div>
 
+    <!-- Sección de Quizzes -->
+    <div class="section">
+        <h2>📚 Elige tu Quiz</h2>
+        <div class="quiz-grid">
+            <!-- Quiz Vocabulario -->
+            <a href="revision_vocabulaire.html" class="quiz-card">
+                <span class="quiz-icon">📖</span>
+                <h3>Quiz Vocabulario</h3>
+                <p>Amplía tu vocabulario espanol en 4 temas:</p>
+                <p style="font-weight: 600; color: #C60C30;">• Palabras básicas • Países • Horas • Comida</p>
+                <div class="quiz-features">
+                    <span class="feature-badge">🔊 Audio</span>
+                    <span class="feature-badge">🔄 Bidireccional</span>
+                    <span class="feature-badge">⚡ Interactivo</span>
+                </div>
+                <button class="btn-start">Empezar Ahora →</button>
+            </a>
+
+            <!-- Quiz Verbos -->
+            <a href="revision_verbes.html" class="quiz-card">
+                <span class="quiz-icon">✏️</span>
+                <h3>Quiz Verbos</h3>
+                <p>Domina la conjugación en presente con ejercicios interactivos:</p>
+                <p style="font-weight: 600; color: #C60C30;">• 30 verbos • Todos los pronombres • Regulares e irregulares</p>
+                <div class="quiz-features">
+                    <span class="feature-badge">🎯 Conjugación</span>
+                    <span class="feature-badge">📊 Seguimiento</span>
+                    <span class="feature-badge">🏆 Puntuación</span>
+                </div>
+                <button class="btn-start">Empezar Ahora →</button>
+            </a>
+
+            <!-- Próximamente -->
+            <div class="quiz-card" style="opacity: 0.7; cursor: not-allowed;">
+                <span class="quiz-icon">🌙</span>
+                <h3>Más Contenido</h3>
+                <p>Estamos preparando nuevas funcionalidades para ti:</p>
+                <p style="font-weight: 600; color: #C60C30;">• Gramática • Escucha • Expresión Oral</p>
+                <div class="quiz-features">
+                    <span class="feature-badge">🔜 Próximamente</span>
+                </div>
+                <button class="btn-start" disabled>En construcción...</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Consejos -->
+    <div class="section">
+        <h2>💡 Consejos para Aprender</h2>
+        <div class="quiz-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="quiz-card">
+                <span class="quiz-icon">🎧</span>
+                <h3>Escucha Activamente</h3>
+                <p>Utiliza el botón de audio para practicar la pronunciación correcta. Repite después de escuchar.</p>
+            </div>
+            <div class="quiz-card">
+                <span class="quiz-icon">🔄</span>
+                <h3>Práctica Diaria</h3>
+                <p>Dedica al menos 15 minutos diarios a los quizzes. La consistencia es la clave del éxito.</p>
+            </div>
+            <div class="quiz-card">
+                <span class="quiz-icon">📝</span>
+                <h3>Escribe y Repite</h3>
+                <p>Escribe las respuestas correctas en tu cuaderno. Esto refuerza tu memoria muscular.</p>
+            </div>
+            <div class="quiz-card">
+                <span class="quiz-icon">🎯</span>
+                <h3>Aprende en Contexto</h3>
+                <p>Cada palabra y verbo se presenta con su contexto real. Entiende el uso, no solo memorices.</p>
+            </div>
+            <div class="quiz-card">
+                <span class="quiz-icon">📊</span>
+                <h3>Supervisa tu Progreso</h3>
+                <p>Toma nota de tu puntuación. Intenta mejorar tu porcentaje en cada sesión.</p>
+            </div>
+            <div class="quiz-card">
+                <span class="quiz-icon">🌟</span>
+                <h3>Sé Consistente</h3>
+                <p>No te desanimes si cometes errores. Son parte del proceso de aprendizaje natural.</p>
+            </div>
+        </div>
+    </div>
 
 </div>
 
 <script>
-    // Initialisation simple
-    window.onload = function() {
-        // Page minimale sans fonctionnalités d'admin ou d'articles
-    };
+    // Smooth scroll para botones internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 </script>
 </body>
 </html>
