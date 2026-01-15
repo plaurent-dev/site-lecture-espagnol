@@ -1,0 +1,94 @@
+{
+  "verbes_irreguliers_present": [
+    {
+      "infinitif": "gaan",
+      "present_ik": "ga",
+      "present_jij_hij_ze": "gaat",
+      "present_wij_jullie_ze": "gaan"
+    },
+    {
+      "infinitif": "komen",
+      "present_ik": "kom",
+      "present_jij_hij_ze": "komt",
+      "present_wij_jullie_ze": "komen"
+    },
+    {
+      "infinitif": "zien",
+      "present_ik": "zie",
+      "present_jij_hij_ze": "ziet",
+      "present_wij_jullie_ze": "zien"
+    },
+    {
+      "infinitif": "zijn",
+      "present_ik": "ben",
+      "present_jij_hij_ze": "is",
+      "present_wij_jullie_ze": "zijn"
+    },
+    {
+      "infinitif": "hebben",
+      "present_ik": "heb",
+      "present_jij_hij_ze": "hebt",
+      "present_wij_jullie_ze": "hebben"
+    },
+    {
+      "infinitif": "kunnen",
+      "present_ik": "kan",
+      "present_jij_hij_ze": "kan",
+      "present_wij_jullie_ze": "kunnen"
+    },
+    {
+      "infinitif": "willen",
+      "present_ik": "wil",
+      "present_jij_hij_ze": "wil",
+      "present_wij_jullie_ze": "willen"
+    },
+    {
+      "infinitif": "moeten",
+      "present_ik": "moet",
+      "present_jij_hij_ze": "moet",
+      "present_wij_jullie_ze": "moeten"
+    },
+    {
+      "infinitif": "mogen",
+      "present_ik": "mag",
+      "present_jij_hij_ze": "mag",
+      "present_wij_jullie_ze": "mogen"
+    },
+    {
+      "infinitif": "denken",
+      "present_ik": "denk",
+      "present_jij_hij_ze": "denkt",
+      "present_wij_jullie_ze": "denken"
+    },
+    {
+      "infinitif": "nemen",
+      "present_ik": "neem",
+      "present_jij_hij_ze": "neemt",
+      "present_wij_jullie_ze": "nemen"
+    },
+    {
+      "infinitif": "geven",
+      "present_ik": "geef",
+      "present_jij_hij_ze": "geeft",
+      "present_wij_jullie_ze": "geven"
+    },
+    {
+      "infinitif": "houden",
+      "present_ik": "houd",
+      "present_jij_hij_ze": "houdt",
+      "present_wij_jullie_ze": "houden"
+    },
+    {
+      "infinitif": "blijven",
+      "present_ik": "blijf",
+      "present_jij_hij_ze": "blijft",
+      "present_wij_jullie_ze": "blijven"
+    },
+    {
+      "infinitif": "rijden",
+      "present_ik": "rijd",
+      "present_jij_hij_ze": "rijdt",
+      "present_wij_jullie_ze": "rijden"
+    }
+  ]
+}
