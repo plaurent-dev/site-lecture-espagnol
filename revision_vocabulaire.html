@@ -965,10 +965,8 @@
     </div>
 
     <script>
-        let mode = 'fr-to-nl';
-        let vocabulaire = [];
+        let vocabulaireList = [];
         let motActuel = null;
-        let reponseRevealed = false;
         let score = 0;
         let totalQuestions = 0;
         let maxQuestions = 10;
@@ -976,9 +974,6 @@
 
         async function chargerVocabulaire() {
             try {
-                // Mettre à jour le titre de la navbar au chargement
-                document.getElementById('navTitle').textContent = 'Révision du vocabulaire (NL → FR)';
-                
                 const response = await fetch('vocabulaire.json?t=' + Date.now());
                 if (!response.ok) {
                     throw new Error(`Erreur HTTP: ${response.status}`);
@@ -987,7 +982,7 @@
                 if (!data.vocabulaire_A1_A2 || data.vocabulaire_A1_A2.length === 0) {
                     throw new Error('Aucun vocabulaire trouvé');
                 }
-                vocabulaire = data.vocabulaire_A1_A2;
+                vocabulaireList = data.vocabulaire_A1_A2;
                 nouvelMot();
             } catch (error) {
                 console.error('Erreur de chargement:', error);
@@ -998,22 +993,6 @@
         function changerNombreQuestions() {
             maxQuestions = parseInt(document.getElementById('numQuestions').value);
             document.getElementById('maxQuestions').textContent = maxQuestions;
-            reinitialiserQuiz();
-        }
-
-        function changerMode(nouveauMode) {
-            mode = nouveauMode;
-            
-            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Mettre à jour la navbar
-            const modeText = mode === 'fr-to-nl' ? 'Révision du vocabulaire (NL → FR)' : 'Révision du vocabulaire (FR → NL)';
-            document.getElementById('navTitle').textContent = modeText;
-
-            const modeDisplay = mode === 'fr-to-nl' ? '🇫🇷 → 🇳🇱' : '🇳🇱 → 🇫🇷';
-            document.getElementById('modeDisplay').textContent = modeDisplay;
-
             reinitialiserQuiz();
         }
 
@@ -1034,57 +1013,28 @@
                 return;
             }
 
-            reponseRevealed = false;
             document.getElementById('result').textContent = '';
             document.getElementById('nextBtn').style.display = 'none';
 
-            const randomIndex = Math.floor(Math.random() * vocabulaire.length);
-            motActuel = vocabulaire[randomIndex];
+            const randomIndex = Math.floor(Math.random() * vocabulaireList.length);
+            motActuel = vocabulaireList[randomIndex];
 
             afficherMot();
             genererOptionsReponse();
         }
 
         function afficherMot() {
-            const speakBtn = document.getElementById('speakBtn');
-            speakBtn.style.display = 'block';
-            speakBtn.textContent = '🔊 Écouter en néerlandais'; // Toujours la même étiquette
-
-            if (mode === 'fr-to-nl') {
-                document.getElementById('wordDisplay').textContent = motActuel.francais;
-                document.getElementById('questionLabel').textContent = 'Traduis en néerlandais :';
-                
-                if (motActuel.de_of_het && motActuel.de_of_het !== 'geen') {
-                    document.getElementById('plurielDisplay').innerHTML = `<strong>En néerlandais :</strong> ${motActuel.neerlandais_singulier} (article: ${motActuel.de_of_het})`;
-                } else if (motActuel.de_of_het === 'geen') {
-                    document.getElementById('plurielDisplay').innerHTML = `<strong>En néerlandais :</strong> ${motActuel.neerlandais_singulier} (pas d'article)`;
-                } else {
-                    document.getElementById('plurielDisplay').textContent = '';
-                }
-            } else {
-                document.getElementById('wordDisplay').textContent = motActuel.neerlandais_singulier;
-                document.getElementById('questionLabel').textContent = 'Traduis en français :';
-                
-                if (motActuel.neerlandais_pluriel !== '—') {
-                    document.getElementById('plurielDisplay').innerHTML = `<strong>Pluriel :</strong> ${motActuel.neerlandais_pluriel}`;
-                } else {
-                    document.getElementById('plurielDisplay').textContent = '';
-                }
-            }
+            document.getElementById('wordDisplay').textContent = motActuel.espagnol_singulier;
+            document.getElementById('questionLabel').textContent = 'Traduis en français :';
         }
 
         function genererOptionsReponse() {
-            let bonneReponse = mode === 'fr-to-nl' ? 
-                motActuel.neerlandais_singulier : 
-                motActuel.francais;
-
+            let bonneReponse = motActuel.francais;
             let options = [bonneReponse];
 
             while (options.length < 4) {
-                const randomIndex = Math.floor(Math.random() * vocabulaire.length);
-                const candidat = mode === 'fr-to-nl' ? 
-                    vocabulaire[randomIndex].neerlandais_singulier : 
-                    vocabulaire[randomIndex].francais;
+                const randomIndex = Math.floor(Math.random() * vocabulaireList.length);
+                const candidat = vocabulaireList[randomIndex].francais;
 
                 if (!options.includes(candidat) && candidat !== bonneReponse) {
                     options.push(candidat);
@@ -1106,28 +1056,8 @@
         }
 
         function validerOption(option, bonneReponse, btnElement) {
-            if (reponseRevealed) return;
-
-            reponseRevealed = true;
-            totalQuestions++;
-
-            const resultDiv = document.getElementById('result');
-            const headerResult = document.getElementById('headerResult');
             const isCorrect = option === bonneReponse;
-
-            // Construire le texte d'information additionnelle
-            let infoTexte = '';
-            if (mode === 'fr-to-nl') {
-                if (motActuel.de_of_het && motActuel.de_of_het !== 'geen') {
-                    infoTexte = `<div style="margin-top: 12px; font-size: 0.95em; opacity: 0.9;">En néerlandais : <strong>${motActuel.neerlandais_singulier}</strong> (article: <strong>${motActuel.de_of_het}</strong>)</div>`;
-                } else if (motActuel.de_of_het === 'geen') {
-                    infoTexte = `<div style="margin-top: 12px; font-size: 0.95em; opacity: 0.9;">En néerlandais : <strong>${motActuel.neerlandais_singulier}</strong> (pas d'article)</div>`;
-                }
-            } else {
-                if (motActuel.neerlandais_pluriel !== '—') {
-                    infoTexte = `<div style="margin-top: 12px; font-size: 0.95em; opacity: 0.9;">Pluriel : <strong>${motActuel.neerlandais_pluriel}</strong></div>`;
-                }
-            }
+            totalQuestions++;
 
             if (isCorrect) {
                 score++;
@@ -1135,20 +1065,13 @@
                 btnElement.classList.add('correct');
                 document.getElementById('headerResultText').className = 'header-result-text correct';
                 document.getElementById('headerResultText').innerHTML = '✓ Correct !';
-                headerResult.style.display = 'flex';
-                resultDiv.innerHTML = `<div class="result correct" style="margin-top: 10px;">La bonne réponse : <strong>${bonneReponse}</strong>${infoTexte}</div>`;
             } else {
                 btnElement.classList.add('incorrect');
                 document.getElementById('headerResultText').className = 'header-result-text incorrect';
                 document.getElementById('headerResultText').innerHTML = '✗ Incorrect';
-                headerResult.style.display = 'flex';
-                resultDiv.innerHTML = `
-                    <div class="result incorrect">
-                        <div style="margin-top: 10px;">La bonne réponse : <strong>${bonneReponse}</strong>${infoTexte}</div>
-                    </div>
-                `;
             }
 
+            document.getElementById('headerResult').style.display = 'flex';
             document.querySelectorAll('.option-btn').forEach(btn => {
                 btn.disabled = true;
                 if (btn.textContent === bonneReponse) {
@@ -1184,11 +1107,9 @@
         function prononcer() {
             if (!motActuel) return;
             
-            // Toujours prononcer le mot en néerlandais
-            const wordToPronounce = motActuel.neerlandais_singulier;
-
+            const wordToPronounce = motActuel.espagnol_singulier;
             const utterance = new SpeechSynthesisUtterance(wordToPronounce);
-            utterance.lang = 'nl-NL'; // Toujours néerlandais
+            utterance.lang = 'es-ES';
             utterance.rate = 0.85;
             utterance.pitch = 1;
             utterance.volume = 1;
