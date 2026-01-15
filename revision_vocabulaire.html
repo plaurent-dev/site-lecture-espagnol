@@ -16,9 +16,15 @@
         .header-result-text { font-size: 1.1em; font-weight: 600; padding: 10px 15px; border-radius: 5px; }
         .header-result-text.correct { color: #26D07C; background: #E8F5E9; }
         .header-result-text.incorrect { color: #F7185F; background: #FFEBEE; }
-        .settings-section { display: flex; gap: 20px; align-items: center; }
+        .settings-section { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         .settings-section label { font-weight: 600; }
         .settings-section select { padding: 8px 12px; border: 2px solid #0066FF; border-radius: 5px; }
+        .toggle-section { display: flex; gap: 10px; align-items: center; }
+        .toggle-btn { padding: 8px 15px; border: 2px solid #666; border-radius: 5px; background: white; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .toggle-btn.active { background: #0066FF; color: white; border-color: #0066FF; }
+        .listen-btn { padding: 8px 15px; background: linear-gradient(135deg, #F7185F, #FF6B6B); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 0.9em; transition: all 0.3s; }
+        .listen-btn:hover { transform: scale(1.05); }
+        .listen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
         .progress-bar { width: 100%; height: 8px; background: #E0E0E0; border-radius: 10px; overflow: hidden; margin-bottom: 30px; }
         .progress-fill { height: 100%; background: linear-gradient(90deg, #0066FF, #26D07C); transition: width 0.3s; }
         .card-vocabulary { background: linear-gradient(135deg, #0066FF 0%, #6366FF 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
@@ -47,11 +53,22 @@
         <div class="header-section">
             <div class="score-display"><span id="scoreValue">0</span>/<span id="maxQuestions">10</span></div>
             <div class="header-result" id="headerResult" style="display: none;"><div class="header-result-text" id="headerResultText"></div></div>
-            <div class="settings-section"><label>Questions:</label><select id="numQuestions" onchange="changerNombreQuestions()"><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option></select></div>
+            <div class="settings-section">
+                <label>Questions:</label><select id="numQuestions" onchange="changerNombreQuestions()"><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option></select>
+                <div class="toggle-section">
+                    <label>Mode:</label>
+                    <button class="toggle-btn active" id="modeES" onclick="changerMode('ES')">ES → FR</button>
+                    <button class="toggle-btn" id="modeFR" onclick="changerMode('FR')">FR → ES</button>
+                </div>
+            </div>
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
         <div id="gameContainer">
-            <div class="card-vocabulary"><div class="word-label">Traduis en francais:</div><div class="word-display" id="wordDisplay">Chargement...</div></div>
+            <div class="card-vocabulary">
+                <div class="word-label" id="wordLabel">Traduis en francais:</div>
+                <div class="word-display" id="wordDisplay">Chargement...</div>
+                <button class="listen-btn" id="listenBtn" onclick="ecouterMot()" style="margin-top: 15px;">🔊 Écouter</button>
+            </div>
             <div class="quiz-options" id="quizOptions"></div>
         </div>
         <div id="gameOverContainer" style="display: none;"><div class="game-over"><h2>Quiz termine!</h2><div class="final-score">Score: <span id="finalScore">0</span>/<span id="finalMax">10</span></div><div style="font-size: 1.5em; color: #26D07C; margin-bottom: 30px;"><span id="percentageValue">0</span>%</div><button class="btn btn-primary" onclick="recommencer()">Recommencer</button></div></div>
@@ -62,6 +79,8 @@
         let score = 0;
         let totalQuestions = 0;
         let maxQuestions = 10;
+        let modeActuel = 'ES'; // 'ES' = Espagnol vers Français, 'FR' = Français vers Espagnol
+        
         async function chargerVocabulaire() {
             try {
                 const res = await fetch('vocabulaire.json?t=' + Date.now());
@@ -73,11 +92,37 @@
                 document.getElementById('wordDisplay').textContent = 'Erreur chargement';
             }
         }
+        
+        function changerMode(mode) {
+            modeActuel = mode;
+            document.getElementById('modeES').classList.remove('active');
+            document.getElementById('modeFR').classList.remove('active');
+            if (mode === 'ES') {
+                document.getElementById('modeES').classList.add('active');
+            } else {
+                document.getElementById('modeFR').classList.add('active');
+            }
+            reinitialiserQuiz();
+        }
+        
+        function ecouterMot() {
+            if (!motActuel) return;
+            const synthèse = window.speechSynthesis;
+            // Annuler tout ce qui était en cours
+            synthèse.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(motActuel.espagnol_singulier);
+            utterance.lang = 'es-ES';
+            utterance.rate = 0.9;
+            synthèse.speak(utterance);
+        }
+        
         function changerNombreQuestions() {
             maxQuestions = parseInt(document.getElementById('numQuestions').value);
             document.getElementById('maxQuestions').textContent = maxQuestions;
             reinitialiserQuiz();
         }
+        
         function reinitialiserQuiz() {
             score = 0;
             totalQuestions = 0;
@@ -87,6 +132,7 @@
             document.getElementById('progressFill').style.width = '0%';
             nouvelMot();
         }
+        
         function nouvelMot() {
             if (totalQuestions >= maxQuestions) {
                 document.getElementById('finalScore').textContent = score;
@@ -97,19 +143,49 @@
                 document.getElementById('gameOverContainer').style.display = 'block';
                 return;
             }
+            
             const idx = Math.floor(Math.random() * vocabulaireList.length);
             motActuel = vocabulaireList[idx];
-            document.getElementById('wordDisplay').textContent = motActuel.espagnol_singulier;
-            document.getElementById('headerResult').style.display = 'none';
-            let bonneReponse = motActuel.francais;
-            let options = [bonneReponse];
-            while (options.length < 4) {
-                const c = vocabulaireList[Math.floor(Math.random() * vocabulaireList.length)].francais;
-                if (!options.includes(c)) options.push(c);
+            
+            let motAffiche, bonneReponse, label;
+            
+            if (modeActuel === 'ES') {
+                // Afficher l'espagnol, répondre en français
+                motAffiche = motActuel.espagnol_singulier;
+                bonneReponse = motActuel.francais;
+                label = 'Traduis en français:';
+            } else {
+                // Afficher le français, répondre en espagnol
+                motAffiche = motActuel.francais;
+                bonneReponse = motActuel.espagnol_singulier;
+                label = 'Traduis en espagnol:';
             }
+            
+            document.getElementById('wordLabel').textContent = label;
+            document.getElementById('wordDisplay').textContent = motAffiche;
+            document.getElementById('listenBtn').style.display = modeActuel === 'ES' ? 'block' : 'none';
+            document.getElementById('headerResult').style.display = 'none';
+            
+            let options = [bonneReponse];
+            
+            // Générer les options alternatives
+            while (options.length < 4) {
+                let optionAlternative;
+                if (modeActuel === 'ES') {
+                    optionAlternative = vocabulaireList[Math.floor(Math.random() * vocabulaireList.length)].francais;
+                } else {
+                    optionAlternative = vocabulaireList[Math.floor(Math.random() * vocabulaireList.length)].espagnol_singulier;
+                }
+                if (!options.includes(optionAlternative)) {
+                    options.push(optionAlternative);
+                }
+            }
+            
             options = options.sort(() => Math.random() - 0.5);
+            
             const container = document.getElementById('quizOptions');
             container.innerHTML = '';
+            
             options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
@@ -139,9 +215,11 @@
                 container.appendChild(btn);
             });
         }
+        
         function recommencer() {
             reinitialiserQuiz();
         }
+        
         window.addEventListener('load', () => chargerVocabulaire());
     </script>
 </body>
