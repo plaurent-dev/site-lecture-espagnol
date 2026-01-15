@@ -1,13 +1,1111 @@
 {
   "vocabulaire_A1_A2": [
     {
-      "neerlandais_singulier": "de man",
-      "neerlandais_pluriel": "de mannen",
-      "de_of_het": "de",
+      "espagnol_singulier": "el hombre",
+      "espagnol_pluriel": "los hombres",
+      "genero": "masculino",
       "francais": "l'homme"
     },
     {
-      "neerlandais_singulier": "de vrouw",
+      "espagnol_singulier": "la mujer",
+      "espagnol_pluriel": "las mujeres",
+      "genero": "femenino",
+      "francais": "la femme"
+    },
+    {
+      "espagnol_singulier": "el niño",
+      "espagnol_pluriel": "los niños",
+      "genero": "masculino",
+      "francais": "l'enfant"
+    },
+    {
+      "espagnol_singulier": "la niña",
+      "espagnol_pluriel": "las niñas",
+      "genero": "femenino",
+      "francais": "la fille"
+    },
+    {
+      "espagnol_singulier": "el amigo",
+      "espagnol_pluriel": "los amigos",
+      "genero": "masculino",
+      "francais": "l'ami"
+    },
+    {
+      "espagnol_singulier": "la amiga",
+      "espagnol_pluriel": "las amigas",
+      "genero": "femenino",
+      "francais": "l'amie"
+    },
+    {
+      "espagnol_singulier": "la familia",
+      "espagnol_pluriel": "las familias",
+      "genero": "femenino",
+      "francais": "la famille"
+    },
+    {
+      "espagnol_singulier": "el padre",
+      "espagnol_pluriel": "los padres",
+      "genero": "masculino",
+      "francais": "le père"
+    },
+    {
+      "espagnol_singulier": "la madre",
+      "espagnol_pluriel": "las madres",
+      "genero": "femenino",
+      "francais": "la mère"
+    },
+    {
+      "espagnol_singulier": "el hermano",
+      "espagnol_pluriel": "los hermanos",
+      "genero": "masculino",
+      "francais": "le frère"
+    },
+    {
+      "espagnol_singulier": "la hermana",
+      "espagnol_pluriel": "las hermanas",
+      "genero": "femenino",
+      "francais": "la sœur"
+    },
+    {
+      "espagnol_singulier": "la abuela",
+      "espagnol_pluriel": "las abuelas",
+      "genero": "femenino",
+      "francais": "la grand-mère"
+    },
+    {
+      "espagnol_singulier": "el abuelo",
+      "espagnol_pluriel": "los abuelos",
+      "genero": "masculino",
+      "francais": "le grand-père"
+    },
+    {
+      "espagnol_singulier": "la casa",
+      "espagnol_pluriel": "las casas",
+      "genero": "femenino",
+      "francais": "la maison"
+    },
+    {
+      "espagnol_singulier": "la habitación",
+      "espagnol_pluriel": "las habitaciones",
+      "genero": "femenino",
+      "francais": "la chambre"
+    },
+    {
+      "espagnol_singulier": "la cocina",
+      "espagnol_pluriel": "las cocinas",
+      "genero": "femenino",
+      "francais": "la cuisine"
+    },
+    {
+      "espagnol_singulier": "el baño",
+      "espagnol_pluriel": "los baños",
+      "genero": "masculino",
+      "francais": "la salle de bain"
+    },
+    {
+      "espagnol_singulier": "el jardín",
+      "espagnol_pluriel": "los jardines",
+      "genero": "masculino",
+      "francais": "le jardin"
+    },
+    {
+      "espagnol_singulier": "la ventana",
+      "espagnol_pluriel": "las ventanas",
+      "genero": "femenino",
+      "francais": "la fenêtre"
+    },
+    {
+      "espagnol_singulier": "la puerta",
+      "espagnol_pluriel": "las puertas",
+      "genero": "femenino",
+      "francais": "la porte"
+    },
+    {
+      "espagnol_singulier": "la mesa",
+      "espagnol_pluriel": "las mesas",
+      "genero": "femenino",
+      "francais": "la table"
+    },
+    {
+      "espagnol_singulier": "la silla",
+      "espagnol_pluriel": "las sillas",
+      "genero": "femenino",
+      "francais": "la chaise"
+    },
+    {
+      "espagnol_singulier": "la cama",
+      "espagnol_pluriel": "las camas",
+      "genero": "femenino",
+      "francais": "le lit"
+    },
+    {
+      "espagnol_singulier": "la ciudad",
+      "espagnol_pluriel": "las ciudades",
+      "genero": "femenino",
+      "francais": "la ville"
+    },
+    {
+      "espagnol_singulier": "el pueblo",
+      "espagnol_pluriel": "los pueblos",
+      "genero": "masculino",
+      "francais": "le village"
+    },
+    {
+      "espagnol_singulier": "la calle",
+      "espagnol_pluriel": "las calles",
+      "genero": "femenino",
+      "francais": "la rue"
+    },
+    {
+      "espagnol_singulier": "el camino",
+      "espagnol_pluriel": "los caminos",
+      "genero": "masculino",
+      "francais": "la route"
+    },
+    {
+      "espagnol_singulier": "la tienda",
+      "espagnol_pluriel": "las tiendas",
+      "genero": "femenino",
+      "francais": "le magasin"
+    },
+    {
+      "espagnol_singulier": "el hospital",
+      "espagnol_pluriel": "los hospitales",
+      "genero": "masculino",
+      "francais": "l'hôpital"
+    },
+    {
+      "espagnol_singulier": "la escuela",
+      "espagnol_pluriel": "las escuelas",
+      "genero": "femenino",
+      "francais": "l'école"
+    },
+    {
+      "espagnol_singulier": "el parque",
+      "espagnol_pluriel": "los parques",
+      "genero": "masculino",
+      "francais": "le parc"
+    },
+    {
+      "espagnol_singulier": "el mercado",
+      "espagnol_pluriel": "los mercados",
+      "genero": "masculino",
+      "francais": "le marché"
+    },
+    {
+      "espagnol_singulier": "el coche",
+      "espagnol_pluriel": "los coches",
+      "genero": "masculino",
+      "francais": "la voiture"
+    },
+    {
+      "espagnol_singulier": "el autobús",
+      "espagnol_pluriel": "los autobuses",
+      "genero": "masculino",
+      "francais": "le bus"
+    },
+    {
+      "espagnol_singulier": "el tren",
+      "espagnol_pluriel": "los trenes",
+      "genero": "masculino",
+      "francais": "le train"
+    },
+    {
+      "espagnol_singulier": "la bicicleta",
+      "espagnol_pluriel": "las bicicletas",
+      "genero": "femenino",
+      "francais": "le vélo"
+    },
+    {
+      "espagnol_singulier": "el avión",
+      "espagnol_pluriel": "los aviones",
+      "genero": "masculino",
+      "francais": "l'avion"
+    },
+    {
+      "espagnol_singulier": "el agua",
+      "espagnol_pluriel": "las aguas",
+      "genero": "femenino",
+      "francais": "l'eau"
+    },
+    {
+      "espagnol_singulier": "el pan",
+      "espagnol_pluriel": "los panes",
+      "genero": "masculino",
+      "francais": "le pain"
+    },
+    {
+      "espagnol_singulier": "el queso",
+      "espagnol_pluriel": "los quesos",
+      "genero": "masculino",
+      "francais": "le fromage"
+    },
+    {
+      "espagnol_singulier": "la manzana",
+      "espagnol_pluriel": "las manzanas",
+      "genero": "femenino",
+      "francais": "la pomme"
+    },
+    {
+      "espagnol_singulier": "el plátano",
+      "espagnol_pluriel": "los plátanos",
+      "genero": "masculino",
+      "francais": "la banane"
+    },
+    {
+      "espagnol_singulier": "la carne",
+      "espagnol_pluriel": "las carnes",
+      "genero": "femenino",
+      "francais": "la viande"
+    },
+    {
+      "espagnol_singulier": "el pescado",
+      "espagnol_pluriel": "los pescados",
+      "genero": "masculino",
+      "francais": "le poisson"
+    },
+    {
+      "espagnol_singulier": "la sopa",
+      "espagnol_pluriel": "las sopas",
+      "genero": "femenino",
+      "francais": "la soupe"
+    },
+    {
+      "espagnol_singulier": "el café",
+      "espagnol_pluriel": "los cafés",
+      "genero": "masculino",
+      "francais": "le café"
+    },
+    {
+      "espagnol_singulier": "el té",
+      "espagnol_pluriel": "los tés",
+      "genero": "masculino",
+      "francais": "le thé"
+    },
+    {
+      "espagnol_singulier": "el día",
+      "espagnol_pluriel": "los días",
+      "genero": "masculino",
+      "francais": "le jour"
+    },
+    {
+      "espagnol_singulier": "la semana",
+      "espagnol_pluriel": "las semanas",
+      "genero": "femenino",
+      "francais": "la semaine"
+    },
+    {
+      "espagnol_singulier": "el mes",
+      "espagnol_pluriel": "los meses",
+      "genero": "masculino",
+      "francais": "le mois"
+    },
+    {
+      "espagnol_singulier": "el año",
+      "espagnol_pluriel": "los años",
+      "genero": "masculino",
+      "francais": "l'année"
+    },
+    {
+      "espagnol_singulier": "la mañana",
+      "espagnol_pluriel": "las mañanas",
+      "genero": "femenino",
+      "francais": "le matin"
+    },
+    {
+      "espagnol_singulier": "la tarde",
+      "espagnol_pluriel": "las tardes",
+      "genero": "femenino",
+      "francais": "l'après-midi"
+    },
+    {
+      "espagnol_singulier": "la noche",
+      "espagnol_pluriel": "las noches",
+      "genero": "femenino",
+      "francais": "le soir"
+    },
+    {
+      "espagnol_singulier": "la mano",
+      "espagnol_pluriel": "las manos",
+      "genero": "femenino",
+      "francais": "la main"
+    },
+    {
+      "espagnol_singulier": "el pie",
+      "espagnol_pluriel": "los pies",
+      "genero": "masculino",
+      "francais": "le pied"
+    },
+    {
+      "espagnol_singulier": "la cabeza",
+      "espagnol_pluriel": "las cabezas",
+      "genero": "femenino",
+      "francais": "la tête"
+    },
+    {
+      "espagnol_singulier": "el brazo",
+      "espagnol_pluriel": "los brazos",
+      "genero": "masculino",
+      "francais": "le bras"
+    },
+    {
+      "espagnol_singulier": "la espalda",
+      "espagnol_pluriel": "las espaldas",
+      "genero": "femenino",
+      "francais": "le dos"
+    },
+    {
+      "espagnol_singulier": "la chaqueta",
+      "espagnol_pluriel": "las chaquetas",
+      "genero": "femenino",
+      "francais": "le manteau"
+    },
+    {
+      "espagnol_singulier": "los pantalones",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "le pantalon"
+    },
+    {
+      "espagnol_singulier": "la camiseta",
+      "espagnol_pluriel": "las camisetas",
+      "genero": "femenino",
+      "francais": "le t-shirt"
+    },
+    {
+      "espagnol_singulier": "el zapato",
+      "espagnol_pluriel": "los zapatos",
+      "genero": "masculino",
+      "francais": "la chaussure"
+    },
+    {
+      "espagnol_singulier": "la lluvia",
+      "espagnol_pluriel": "—",
+      "genero": "femenino",
+      "francais": "la pluie"
+    },
+    {
+      "espagnol_singulier": "el sol",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "le soleil"
+    },
+    {
+      "espagnol_singulier": "el viento",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "le vent"
+    },
+    {
+      "espagnol_singulier": "la nieve",
+      "espagnol_pluriel": "—",
+      "genero": "femenino",
+      "francais": "la neige"
+    },
+    {
+      "espagnol_singulier": "el trabajo",
+      "espagnol_pluriel": "los trabajos",
+      "genero": "masculino",
+      "francais": "le travail"
+    },
+    {
+      "espagnol_singulier": "el empleo",
+      "espagnol_pluriel": "los empleos",
+      "genero": "masculino",
+      "francais": "l'emploi"
+    },
+    {
+      "espagnol_singulier": "el compañero",
+      "espagnol_pluriel": "los compañeros",
+      "genero": "masculino",
+      "francais": "le collègue"
+    },
+    {
+      "espagnol_singulier": "la pregunta",
+      "espagnol_pluriel": "las preguntas",
+      "genero": "femenino",
+      "francais": "la question"
+    },
+    {
+      "espagnol_singulier": "la respuesta",
+      "espagnol_pluriel": "las respuestas",
+      "genero": "femenino",
+      "francais": "la réponse"
+    },
+    {
+      "espagnol_singulier": "el nombre",
+      "espagnol_pluriel": "los nombres",
+      "genero": "masculino",
+      "francais": "le nom"
+    },
+    {
+      "espagnol_singulier": "la palabra",
+      "espagnol_pluriel": "las palabras",
+      "genero": "femenino",
+      "francais": "le mot"
+    },
+    {
+      "espagnol_singulier": "la lengua",
+      "espagnol_pluriel": "las lenguas",
+      "genero": "femenino",
+      "francais": "la langue"
+    },
+    {
+      "espagnol_singulier": "gracias",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "merci"
+    },
+    {
+      "espagnol_singulier": "el español",
+      "espagnol_pluriel": "los españoles",
+      "genero": "masculino",
+      "francais": "l'espagnol"
+    },
+    {
+      "espagnol_singulier": "el italiano",
+      "espagnol_pluriel": "los italianos",
+      "genero": "masculino",
+      "francais": "l'italien"
+    },
+    {
+      "espagnol_singulier": "el francés",
+      "espagnol_pluriel": "los franceses",
+      "genero": "masculino",
+      "francais": "le français"
+    },
+    {
+      "espagnol_singulier": "el inglés",
+      "espagnol_pluriel": "los ingleses",
+      "genero": "masculino",
+      "francais": "l'anglais"
+    },
+    {
+      "espagnol_singulier": "el alemán",
+      "espagnol_pluriel": "los alemanes",
+      "genero": "masculino",
+      "francais": "l'allemand"
+    },
+    {
+      "espagnol_singulier": "agradable",
+      "espagnol_pluriel": "agradables",
+      "genero": "neutro",
+      "francais": "agréable"
+    },
+    {
+      "espagnol_singulier": "hablar",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "parler"
+    },
+    {
+      "espagnol_singulier": "vivir",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "habiter"
+    },
+    {
+      "espagnol_singulier": "por favor",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "s'il te plaît"
+    },
+    {
+      "espagnol_singulier": "lo siento",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "désolé"
+    },
+    {
+      "espagnol_singulier": "esto",
+      "espagnol_pluriel": "estos",
+      "genero": "neutro",
+      "francais": "ceci"
+    },
+    {
+      "espagnol_singulier": "eso",
+      "espagnol_pluriel": "esos",
+      "genero": "neutro",
+      "francais": "cela"
+    },
+    {
+      "espagnol_singulier": "dentro",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "dedans"
+    },
+    {
+      "espagnol_singulier": "fuera",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "dehors"
+    },
+    {
+      "espagnol_singulier": "caro",
+      "espagnol_pluriel": "caros",
+      "genero": "masculino",
+      "francais": "cher / coûteux"
+    },
+    {
+      "espagnol_singulier": "hasta",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "jusqu'à"
+    },
+    {
+      "espagnol_singulier": "siguiente",
+      "espagnol_pluriel": "siguientes",
+      "genero": "neutro",
+      "francais": "suivant(e)"
+    },
+    {
+      "espagnol_singulier": "sucio",
+      "espagnol_pluriel": "sucios",
+      "genero": "masculino",
+      "francais": "dégueu / mauvais goût"
+    },
+    {
+      "espagnol_singulier": "el desayuno",
+      "espagnol_pluriel": "los desayunos",
+      "genero": "masculino",
+      "francais": "le petit-déjeuner"
+    },
+    {
+      "espagnol_singulier": "la comida",
+      "espagnol_pluriel": "las comidas",
+      "genero": "femenino",
+      "francais": "le déjeuner"
+    },
+    {
+      "espagnol_singulier": "la cena",
+      "espagnol_pluriel": "las cenas",
+      "genero": "femenino",
+      "francais": "le dîner"
+    },
+    {
+      "espagnol_singulier": "el teléfono",
+      "espagnol_pluriel": "los teléfonos",
+      "genero": "masculino",
+      "francais": "le téléphone"
+    },
+    {
+      "espagnol_singulier": "el bolígrafo",
+      "espagnol_pluriel": "los bolígrafos",
+      "genero": "masculino",
+      "francais": "le stylo"
+    },
+    {
+      "espagnol_singulier": "el cuaderno",
+      "espagnol_pluriel": "los cuadernos",
+      "genero": "masculino",
+      "francais": "le cahier"
+    },
+    {
+      "espagnol_singulier": "cuánto",
+      "espagnol_pluriel": "cuántos",
+      "genero": "masculino",
+      "francais": "combien"
+    },
+    {
+      "espagnol_singulier": "el kilo",
+      "espagnol_pluriel": "los kilos",
+      "genero": "masculino",
+      "francais": "le kilo"
+    },
+    {
+      "espagnol_singulier": "el litro",
+      "espagnol_pluriel": "los litros",
+      "genero": "masculino",
+      "francais": "le litre"
+    },
+    {
+      "espagnol_singulier": "la leche",
+      "espagnol_pluriel": "—",
+      "genero": "femenino",
+      "francais": "le lait"
+    },
+    {
+      "espagnol_singulier": "el cuarto",
+      "espagnol_pluriel": "los cuartos",
+      "genero": "masculino",
+      "francais": "le quart"
+    },
+    {
+      "espagnol_singulier": "fácil",
+      "espagnol_pluriel": "fáciles",
+      "genero": "neutro",
+      "francais": "facile"
+    },
+    {
+      "espagnol_singulier": "difícil",
+      "espagnol_pluriel": "difíciles",
+      "genero": "neutro",
+      "francais": "difficile"
+    },
+    {
+      "espagnol_singulier": "lunes",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "lundi"
+    },
+    {
+      "espagnol_singulier": "martes",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "mardi"
+    },
+    {
+      "espagnol_singulier": "miércoles",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "mercredi"
+    },
+    {
+      "espagnol_singulier": "jueves",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "jeudi"
+    },
+    {
+      "espagnol_singulier": "viernes",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "vendredi"
+    },
+    {
+      "espagnol_singulier": "sábado",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "samedi"
+    },
+    {
+      "espagnol_singulier": "domingo",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "dimanche"
+    },
+    {
+      "espagnol_singulier": "el ordenador",
+      "espagnol_pluriel": "los ordenadores",
+      "genero": "masculino",
+      "francais": "l'ordinateur"
+    },
+    {
+      "espagnol_singulier": "el libro",
+      "espagnol_pluriel": "los libros",
+      "genero": "masculino",
+      "francais": "le livre"
+    },
+    {
+      "espagnol_singulier": "el lápiz",
+      "espagnol_pluriel": "los lápices",
+      "genero": "masculino",
+      "francais": "le crayon"
+    },
+    {
+      "espagnol_singulier": "la escuela",
+      "espagnol_pluriel": "las escuelas",
+      "genero": "femenino",
+      "francais": "l'école"
+    },
+    {
+      "espagnol_singulier": "el profesor",
+      "espagnol_pluriel": "los profesores",
+      "genero": "masculino",
+      "francais": "le professeur"
+    },
+    {
+      "espagnol_singulier": "la profesora",
+      "espagnol_pluriel": "las profesoras",
+      "genero": "femenino",
+      "francais": "la professeure"
+    },
+    {
+      "espagnol_singulier": "el alumno",
+      "espagnol_pluriel": "los alumnos",
+      "genero": "masculino",
+      "francais": "l'élève"
+    },
+    {
+      "espagnol_singulier": "la alumna",
+      "espagnol_pluriel": "las alumnas",
+      "genero": "femenino",
+      "francais": "l'élève (fille)"
+    },
+    {
+      "espagnol_singulier": "la clase",
+      "espagnol_pluriel": "las clases",
+      "genero": "femenino",
+      "francais": "la classe"
+    },
+    {
+      "espagnol_singulier": "el deporte",
+      "espagnol_pluriel": "los deportes",
+      "genero": "masculino",
+      "francais": "le sport"
+    },
+    {
+      "espagnol_singulier": "el fútbol",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "le football"
+    },
+    {
+      "espagnol_singulier": "la música",
+      "espagnol_pluriel": "—",
+      "genero": "femenino",
+      "francais": "la musique"
+    },
+    {
+      "espagnol_singulier": "el arte",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "l'art"
+    },
+    {
+      "espagnol_singulier": "el juego",
+      "espagnol_pluriel": "los juegos",
+      "genero": "masculino",
+      "francais": "le jeu"
+    },
+    {
+      "espagnol_singulier": "jugar",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "jouer"
+    },
+    {
+      "espagnol_singulier": "leer",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "lire"
+    },
+    {
+      "espagnol_singulier": "ir",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "aller"
+    },
+    {
+      "espagnol_singulier": "repetir",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "répéter"
+    },
+    {
+      "espagnol_singulier": "entender",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "comprendre"
+    },
+    {
+      "espagnol_singulier": "el momento",
+      "espagnol_pluriel": "los momentos",
+      "genero": "masculino",
+      "francais": "le moment"
+    },
+    {
+      "espagnol_singulier": "adiós",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "au revoir"
+    },
+    {
+      "espagnol_singulier": "hola",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "bonjour"
+    },
+    {
+      "espagnol_singulier": "sí",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "oui"
+    },
+    {
+      "espagnol_singulier": "no",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "non"
+    },
+    {
+      "espagnol_singulier": "buenas noches",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "bonne nuit"
+    },
+    {
+      "espagnol_singulier": "buenos días",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "bonjour (le matin)"
+    },
+    {
+      "espagnol_singulier": "buenas tardes",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "bonjour (l'après-midi)"
+    },
+    {
+      "espagnol_singulier": "me llamo",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "je m'appelle"
+    },
+    {
+      "espagnol_singulier": "¿Cómo estás?",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "Comment vas-tu?"
+    },
+    {
+      "espagnol_singulier": "bien",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "bien"
+    },
+    {
+      "espagnol_singulier": "mal",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "mal"
+    },
+    {
+      "espagnol_singulier": "muy",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "très"
+    },
+    {
+      "espagnol_singulier": "mucho",
+      "espagnol_pluriel": "muchos",
+      "genero": "masculino",
+      "francais": "beaucoup"
+    },
+    {
+      "espagnol_singulier": "poco",
+      "espagnol_pluriel": "pocos",
+      "genero": "masculino",
+      "francais": "peu"
+    },
+    {
+      "espagnol_singulier": "todo",
+      "espagnol_pluriel": "todos",
+      "genero": "masculino",
+      "francais": "tout"
+    },
+    {
+      "espagnol_singulier": "nada",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "rien"
+    },
+    {
+      "espagnol_singulier": "algo",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "quelque chose"
+    },
+    {
+      "espagnol_singulier": "alguien",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "quelqu'un"
+    },
+    {
+      "espagnol_singulier": "nadie",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "personne"
+    },
+    {
+      "espagnol_singulier": "el color",
+      "espagnol_pluriel": "los colores",
+      "genero": "masculino",
+      "francais": "la couleur"
+    },
+    {
+      "espagnol_singulier": "rojo",
+      "espagnol_pluriel": "rojos",
+      "genero": "masculino",
+      "francais": "rouge"
+    },
+    {
+      "espagnol_singulier": "azul",
+      "espagnol_pluriel": "azules",
+      "genero": "neutro",
+      "francais": "bleu"
+    },
+    {
+      "espagnol_singulier": "amarillo",
+      "espagnol_pluriel": "amarillos",
+      "genero": "masculino",
+      "francais": "jaune"
+    },
+    {
+      "espagnol_singulier": "verde",
+      "espagnol_pluriel": "verdes",
+      "genero": "neutro",
+      "francais": "vert"
+    },
+    {
+      "espagnol_singulier": "negro",
+      "espagnol_pluriel": "negros",
+      "genero": "masculino",
+      "francais": "noir"
+    },
+    {
+      "espagnol_singulier": "blanco",
+      "espagnol_pluriel": "blancos",
+      "genero": "masculino",
+      "francais": "blanc"
+    },
+    {
+      "espagnol_singulier": "grande",
+      "espagnol_pluriel": "grandes",
+      "genero": "neutro",
+      "francais": "grand"
+    },
+    {
+      "espagnol_singulier": "pequeño",
+      "espagnol_pluriel": "pequeños",
+      "genero": "masculino",
+      "francais": "petit"
+    },
+    {
+      "espagnol_singulier": "nuevo",
+      "espagnol_pluriel": "nuevos",
+      "genero": "masculino",
+      "francais": "nouveau"
+    },
+    {
+      "espagnol_singulier": "viejo",
+      "espagnol_pluriel": "viejos",
+      "genero": "masculino",
+      "francais": "vieux"
+    },
+    {
+      "espagnol_singulier": "joven",
+      "espagnol_pluriel": "jóvenes",
+      "genero": "neutro",
+      "francais": "jeune"
+    },
+    {
+      "espagnol_singulier": "rápido",
+      "espagnol_pluriel": "rápidos",
+      "genero": "masculino",
+      "francais": "rapide"
+    },
+    {
+      "espagnol_singulier": "lento",
+      "espagnol_pluriel": "lentos",
+      "genero": "masculino",
+      "francais": "lent"
+    },
+    {
+      "espagnol_singulier": "caliente",
+      "espagnol_pluriel": "calientes",
+      "genero": "neutro",
+      "francais": "chaud"
+    },
+    {
+      "espagnol_singulier": "frío",
+      "espagnol_pluriel": "fríos",
+      "genero": "masculino",
+      "francais": "froid"
+    },
+    {
+      "espagnol_singulier": "alto",
+      "espagnol_pluriel": "altos",
+      "genero": "masculino",
+      "francais": "haut"
+    },
+    {
+      "espagnol_singulier": "bajo",
+      "espagnol_pluriel": "bajos",
+      "genero": "masculino",
+      "francais": "bas"
+    },
+    {
+      "espagnol_singulier": "el precio",
+      "espagnol_pluriel": "los precios",
+      "genero": "masculino",
+      "francais": "le prix"
+    },
+    {
+      "espagnol_singulier": "euros",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "euros"
+    },
+    {
+      "espagnol_singulier": "el número",
+      "espagnol_pluriel": "los números",
+      "genero": "masculino",
+      "francais": "le nombre/le numéro"
+    },
+    {
+      "espagnol_singulier": "uno",
+      "espagnol_pluriel": "—",
+      "genero": "masculino",
+      "francais": "un"
+    },
+    {
+      "espagnol_singulier": "dos",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "deux"
+    },
+    {
+      "espagnol_singulier": "tres",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "trois"
+    },
+    {
+      "espagnol_singulier": "cuatro",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "quatre"
+    },
+    {
+      "espagnol_singulier": "cinco",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "cinq"
+    },
+    {
+      "espagnol_singulier": "seis",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "six"
+    },
+    {
+      "espagnol_singulier": "siete",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "sept"
+    },
+    {
+      "espagnol_singulier": "ocho",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "huit"
+    },
+    {
+      "espagnol_singulier": "nueve",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "neuf"
+    },
+    {
+      "espagnol_singulier": "diez",
+      "espagnol_pluriel": "—",
+      "genero": "neutro",
+      "francais": "dix"
+    }
+  ]
+}
       "neerlandais_pluriel": "de vrouwen",
       "de_of_het": "de",
       "francais": "la femme"
