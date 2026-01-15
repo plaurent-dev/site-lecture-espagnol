@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Verbes Espagnol Léonard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Segoe UI, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .navbar { background: linear-gradient(90deg, #F7185F 0%, #0066FF 100%); color: white; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; padding: 30px; }
+        .back-btn { position: fixed; top: 20px; left: 20px; padding: 10px 20px; background: white; color: #667eea; border-radius: 5px; text-decoration: none; font-weight: bold; z-index: 1000; }
+        .header-section { display: flex; justify-content: space-between; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
+        .score-display { font-size: 1.5em; font-weight: bold; color: #0066FF; }
+        .header-result { display: flex; align-items: center; gap: 10px; }
+        .header-result-text { font-size: 1.1em; font-weight: 600; padding: 10px 15px; border-radius: 5px; }
+        .header-result-text.correct { color: #26D07C; background: #E8F5E9; }
+        .header-result-text.incorrect { color: #F7185F; background: #FFEBEE; }
+        .settings-section { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+        .settings-section label { font-weight: 600; }
+        .settings-section select { padding: 8px 12px; border: 2px solid #0066FF; border-radius: 5px; }
+        .toggle-section { display: flex; gap: 10px; align-items: center; }
+        .toggle-btn { padding: 8px 15px; border: 2px solid #666; border-radius: 5px; background: white; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .toggle-btn.active { background: #0066FF; color: white; border-color: #0066FF; }
+        .listen-btn { padding: 8px 15px; background: linear-gradient(135deg, #F7185F, #FF6B6B); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 0.9em; transition: all 0.3s; }
+        .listen-btn:hover { transform: scale(1.05); }
+        .listen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .progress-bar { width: 100%; height: 8px; background: #E0E0E0; border-radius: 10px; overflow: hidden; margin-bottom: 30px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #0066FF, #26D07C); transition: width 0.3s; }
+        .card-vocabulary { background: linear-gradient(135deg, #0066FF 0%, #6366FF 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 30px; }
+        .word-display { font-size: 2.5em; font-weight: bold; margin-bottom: 20px; }
+        .word-label { font-size: 1.2em; font-weight: 600; margin-bottom: 15px; opacity: 0.9; }
+        .pronoun-display { font-size: 1.4em; margin-bottom: 10px; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 8px; display: inline-block; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px; }
+        .option-btn { padding: 20px; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; color: white; transition: all 0.3s; }
+        .option-btn:nth-child(1) { background: linear-gradient(135deg, #F7185F, #FF6B6B); }
+        .option-btn:nth-child(2) { background: linear-gradient(135deg, #0066FF, #6366FF); }
+        .option-btn:nth-child(3) { background: linear-gradient(135deg, #FFB800, #FFC107); }
+        .option-btn:nth-child(4) { background: linear-gradient(135deg, #26D07C, #4CAF50); }
+        .option-btn:disabled { opacity: 0.8; cursor: not-allowed; }
+        .option-btn.correct { background: linear-gradient(135deg, #26D07C, #4CAF50); }
+        .option-btn.incorrect { background: #ccc; color: #666; }
+        .btn { padding: 12px 30px; border: none; border-radius: 8px; font-size: 1.1em; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, #0066FF, #6366FF); color: white; }
+        .game-over { text-align: center; padding: 40px; }
+        .game-over h2 { font-size: 2.5em; color: #333; margin-bottom: 20px; }
+        .final-score { font-size: 2em; color: #0066FF; font-weight: bold; margin-bottom: 15px; }
+        .verb-info { font-size: 0.9em; margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; }
+        @media (max-width: 600px) { .quiz-options { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">Retour</a>
+    <div class="navbar"><h1>ES - Quiz Verbes</h1></div>
+    <div class="container">
+        <div class="header-section">
+            <div class="score-display"><span id="scoreValue">0</span>/<span id="maxQuestions">10</span></div>
+            <div class="header-result" id="headerResult" style="display: none;"><div class="header-result-text" id="headerResultText"></div></div>
+            <div class="settings-section">
+                <label>Questions:</label><select id="numQuestions" onchange="changerNombreQuestions()"><option value="10" selected>10</option><option value="20">20</option><option value="30">30</option></select>
+            </div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div id="gameContainer">
+            <div class="card-vocabulary">
+                <div class="word-label" id="wordLabel">Conjugue le verbe:</div>
+                <div class="word-display" id="wordDisplay">Chargement...</div>
+                <div class="pronoun-display" id="pronounDisplay"></div>
+                <div class="verb-info" id="verbInfo"></div>
+                <button class="listen-btn" id="listenBtn" onclick="ecouterVerbe()" style="margin-top: 15px;">🔊 Écouter</button>
+            </div>
+            <div class="quiz-options" id="quizOptions"></div>
+        </div>
+        <div id="gameOverContainer" style="display: none;"><div class="game-over"><h2>Quiz terminé!</h2><div class="final-score">Score: <span id="finalScore">0</span>/<span id="finalMax">10</span></div><div style="font-size: 1.5em; color: #26D07C; margin-bottom: 30px;"><span id="percentageValue">0</span>%</div><button class="btn btn-primary" onclick="recommencer()">Recommencer</button></div></div>
+    </div>
+    <script>
+        let verbesList = [];
+        let verbeActuel = null;
+        let pronounActuel = null;
+        let score = 0;
+        let totalQuestions = 0;
+        let maxQuestions = 10;
+        
+        const pronouns = {
+            "yo": "je",
+            "tu": "tu",
+            "el": "il/elle/vous",
+            "nosotros": "nous",
+            "vosotros": "vous (Espagne)",
+            "ellos": "ils/elles"
+        };
+        
+        async function chargerVerbes() {
+            try {
+                const res = await fetch('present.json?t=' + Date.now());
+                const data = await res.json();
+                verbesList = data.verbes_present;
+                nouvelVerbe();
+            } catch(e) {
+                console.error('Erreur:', e);
+                document.getElementById('wordDisplay').textContent = 'Erreur chargement';
+            }
+        }
+        
+        function ecouterVerbe() {
+            if (!verbeActuel) return;
+            const synthèse = window.speechSynthesis;
+            synthèse.cancel();
+            
+            const formeConjuguee = verbeActuel.conjugaison[pronounActuel];
+            const utterance = new SpeechSynthesisUtterance(formeConjuguee);
+            utterance.lang = 'es-ES';
+            utterance.rate = 0.9;
+            synthèse.speak(utterance);
+        }
+        
+        function changerNombreQuestions() {
+            maxQuestions = parseInt(document.getElementById('numQuestions').value);
+            document.getElementById('maxQuestions').textContent = maxQuestions;
+            reinitialiserQuiz();
+        }
+        
+        function reinitialiserQuiz() {
+            score = 0;
+            totalQuestions = 0;
+            document.getElementById('scoreValue').textContent = '0';
+            document.getElementById('gameContainer').style.display = 'block';
+            document.getElementById('gameOverContainer').style.display = 'none';
+            document.getElementById('progressFill').style.width = '0%';
+            nouvelVerbe();
+        }
+        
+        function nouvelVerbe() {
+            if (totalQuestions >= maxQuestions) {
+                document.getElementById('finalScore').textContent = score;
+                document.getElementById('finalMax').textContent = maxQuestions;
+                const pct = Math.round((score / maxQuestions) * 100);
+                document.getElementById('percentageValue').textContent = pct;
+                document.getElementById('gameContainer').style.display = 'none';
+                document.getElementById('gameOverContainer').style.display = 'block';
+                return;
+            }
+            
+            // Sélectionner un verbe aléatoire
+            const idxVerbe = Math.floor(Math.random() * verbesList.length);
+            verbeActuel = verbesList[idxVerbe];
+            
+            // Sélectionner un pronom aléatoire
+            const pronounKeys = Object.keys(verbeActuel.conjugaison);
+            pronounActuel = pronounKeys[Math.floor(Math.random() * pronounKeys.length)];
+            
+            const bonneReponse = verbeActuel.conjugaison[pronounActuel];
+            const traductionPronom = pronouns[pronounActuel];
+            
+            document.getElementById('wordLabel').textContent = 'Conjugue le verbe:';
+            document.getElementById('wordDisplay').textContent = verbeActuel.infinitif;
+            document.getElementById('pronounDisplay').textContent = `(${traductionPronom})`;
+            document.getElementById('verbInfo').textContent = `${verbeActuel.traduction} - Type: ${verbeActuel.type}`;
+            document.getElementById('headerResult').style.display = 'none';
+            
+            // Générer les options
+            let options = [bonneReponse];
+            
+            // Ajouter des options incorrectes du même verbe
+            const autrePronounKeys = pronounKeys.filter(p => p !== pronounActuel);
+            while (options.length < 3 && autrePronounKeys.length > 0) {
+                const idx = Math.floor(Math.random() * autrePronounKeys.length);
+                const wrongPronom = autrePronounKeys[idx];
+                const wrongOption = verbeActuel.conjugaison[wrongPronom];
+                if (!options.includes(wrongOption)) {
+                    options.push(wrongOption);
+                    autrePronounKeys.splice(idx, 1);
+                }
+            }
+            
+            // Ajouter une option d'un autre verbe si nécessaire
+            while (options.length < 4) {
+                const idxAutreVerbe = Math.floor(Math.random() * verbesList.length);
+                const autreVerbe = verbesList[idxAutreVerbe];
+                const autrePronom = Object.keys(autreVerbe.conjugaison)[Math.floor(Math.random() * 6)];
+                const option = autreVerbe.conjugaison[autrePronom];
+                if (!options.includes(option)) {
+                    options.push(option);
+                }
+            }
+            
+            options = options.sort(() => Math.random() - 0.5);
+            
+            const container = document.getElementById('quizOptions');
+            container.innerHTML = '';
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = opt;
+                btn.onclick = () => {
+                    totalQuestions++;
+                    const correct = opt === bonneReponse;
+                    if (correct) {
+                        score++;
+                        document.getElementById('scoreValue').textContent = score;
+                        btn.classList.add('correct');
+                        document.getElementById('headerResultText').innerHTML = 'Correct!';
+                        document.getElementById('headerResultText').className = 'header-result-text correct';
+                    } else {
+                        btn.classList.add('incorrect');
+                        document.getElementById('headerResultText').innerHTML = 'Incorrect';
+                        document.getElementById('headerResultText').className = 'header-result-text incorrect';
+                    }
+                    document.getElementById('progressFill').style.width = ((totalQuestions / maxQuestions) * 100) + '%';
+                    document.getElementById('headerResult').style.display = 'flex';
+                    document.querySelectorAll('.option-btn').forEach(b => {
+                        b.disabled = true;
+                        if (b.textContent === bonneReponse) b.classList.add('correct');
+                    });
+                    setTimeout(() => nouvelVerbe(), 1500);
+                };
+                container.appendChild(btn);
+            });
+        }
+        
+        function recommencer() {
+            reinitialiserQuiz();
+        }
+        
+        window.addEventListener('load', () => chargerVerbes());
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+{
+  "verbes_present": [
+    {
+      "infinitif": "hablar",
+      "traduction": "parler",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "hablo",
+        "tu": "hablas",
+        "el": "habla",
+        "nosotros": "hablamos",
+        "vosotros": "habláis",
+        "ellos": "hablan"
+      }
+    },
+    {
+      "infinitif": "comer",
+      "traduction": "manger",
+      "type": "régulier (-er)",
+      "conjugaison": {
+        "yo": "como",
+        "tu": "comes",
+        "el": "come",
+        "nosotros": "comemos",
+        "vosotros": "coméis",
+        "ellos": "comen"
+      }
+    },
+    {
+      "infinitif": "vivir",
+      "traduction": "habiter",
+      "type": "régulier (-ir)",
+      "conjugaison": {
+        "yo": "vivo",
+        "tu": "vives",
+        "el": "vive",
+        "nosotros": "vivimos",
+        "vosotros": "vivís",
+        "ellos": "viven"
+      }
+    },
+    {
+      "infinitif": "ser",
+      "traduction": "être (permanent)",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "soy",
+        "tu": "eres",
+        "el": "es",
+        "nosotros": "somos",
+        "vosotros": "sois",
+        "ellos": "son"
+      }
+    },
+    {
+      "infinitif": "estar",
+      "traduction": "être (localisation/état)",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "estoy",
+        "tu": "estás",
+        "el": "está",
+        "nosotros": "estamos",
+        "vosotros": "estáis",
+        "ellos": "están"
+      }
+    },
+    {
+      "infinitif": "ir",
+      "traduction": "aller",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "voy",
+        "tu": "vas",
+        "el": "va",
+        "nosotros": "vamos",
+        "vosotros": "vais",
+        "ellos": "van"
+      }
+    },
+    {
+      "infinitif": "tener",
+      "traduction": "avoir",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "tengo",
+        "tu": "tienes",
+        "el": "tiene",
+        "nosotros": "tenemos",
+        "vosotros": "tenéis",
+        "ellos": "tienen"
+      }
+    },
+    {
+      "infinitif": "hacer",
+      "traduction": "faire",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "hago",
+        "tu": "haces",
+        "el": "hace",
+        "nosotros": "hacemos",
+        "vosotros": "hacéis",
+        "ellos": "hacen"
+      }
+    },
+    {
+      "infinitif": "llamar",
+      "traduction": "appeler / s'appeler",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "llamo",
+        "tu": "llamas",
+        "el": "llama",
+        "nosotros": "llamamos",
+        "vosotros": "llamáis",
+        "ellos": "llaman"
+      }
+    },
+    {
+      "infinitif": "comprar",
+      "traduction": "acheter",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "compro",
+        "tu": "compras",
+        "el": "compra",
+        "nosotros": "compramos",
+        "vosotros": "compráis",
+        "ellos": "compran"
+      }
+    },
+    {
+      "infinitif": "beber",
+      "traduction": "boire",
+      "type": "régulier (-er)",
+      "conjugaison": {
+        "yo": "bebo",
+        "tu": "bebes",
+        "el": "bebe",
+        "nosotros": "bebemos",
+        "vosotros": "bebéis",
+        "ellos": "beben"
+      }
+    },
+    {
+      "infinitif": "escribir",
+      "traduction": "écrire",
+      "type": "régulier (-ir)",
+      "conjugaison": {
+        "yo": "escribo",
+        "tu": "escribes",
+        "el": "escribe",
+        "nosotros": "escribimos",
+        "vosotros": "escribís",
+        "ellos": "escriben"
+      }
+    },
+    {
+      "infinitif": "leer",
+      "traduction": "lire",
+      "type": "régulier (-er)",
+      "conjugaison": {
+        "yo": "leo",
+        "tu": "lees",
+        "el": "lee",
+        "nosotros": "leemos",
+        "vosotros": "leéis",
+        "ellos": "leen"
+      }
+    },
+    {
+      "infinitif": "jugar",
+      "traduction": "jouer",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "juego",
+        "tu": "juegas",
+        "el": "juega",
+        "nosotros": "jugamos",
+        "vosotros": "jugáis",
+        "ellos": "juegan"
+      }
+    },
+    {
+      "infinitif": "entender",
+      "traduction": "comprendre",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "entiendo",
+        "tu": "entiendes",
+        "el": "entiende",
+        "nosotros": "entendemos",
+        "vosotros": "entendéis",
+        "ellos": "entienden"
+      }
+    },
+    {
+      "infinitif": "querer",
+      "traduction": "vouloir",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "quiero",
+        "tu": "quieres",
+        "el": "quiere",
+        "nosotros": "queremos",
+        "vosotros": "queréis",
+        "ellos": "quieren"
+      }
+    },
+    {
+      "infinitif": "poder",
+      "traduction": "pouvoir",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "puedo",
+        "tu": "puedes",
+        "el": "puede",
+        "nosotros": "podemos",
+        "vosotros": "podéis",
+        "ellos": "pueden"
+      }
+    },
+    {
+      "infinitif": "deber",
+      "traduction": "devoir",
+      "type": "régulier (-er)",
+      "conjugaison": {
+        "yo": "debo",
+        "tu": "debes",
+        "el": "debe",
+        "nosotros": "debemos",
+        "vosotros": "debéis",
+        "ellos": "deben"
+      }
+    },
+    {
+      "infinitif": "trabajar",
+      "traduction": "travailler",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "trabajo",
+        "tu": "trabajas",
+        "el": "trabaja",
+        "nosotros": "trabajamos",
+        "vosotros": "trabajáis",
+        "ellos": "trabajan"
+      }
+    },
+    {
+      "infinitif": "estudiar",
+      "traduction": "étudier",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "estudio",
+        "tu": "estudias",
+        "el": "estudia",
+        "nosotros": "estudiamos",
+        "vosotros": "estudiáis",
+        "ellos": "estudian"
+      }
+    },
+    {
+      "infinitif": "escuchar",
+      "traduction": "écouter",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "escucho",
+        "tu": "escuchas",
+        "el": "escucha",
+        "nosotros": "escuchamos",
+        "vosotros": "escucháis",
+        "ellos": "escuchan"
+      }
+    },
+    {
+      "infinitif": "mirar",
+      "traduction": "regarder",
+      "type": "régulier (-ar)",
+      "conjugaison": {
+        "yo": "miro",
+        "tu": "miras",
+        "el": "mira",
+        "nosotros": "miramos",
+        "vosotros": "miráis",
+        "ellos": "miran"
+      }
+    },
+    {
+      "infinitif": "abrir",
+      "traduction": "ouvrir",
+      "type": "régulier (-ir)",
+      "conjugaison": {
+        "yo": "abro",
+        "tu": "abres",
+        "el": "abre",
+        "nosotros": "abrimos",
+        "vosotros": "abrís",
+        "ellos": "abren"
+      }
+    },
+    {
+      "infinitif": "cerrar",
+      "traduction": "fermer",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "cierro",
+        "tu": "cierras",
+        "el": "cierra",
+        "nosotros": "cerramos",
+        "vosotros": "cerráis",
+        "ellos": "cierran"
+      }
+    },
+    {
+      "infinitif": "contar",
+      "traduction": "compter / raconter",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "cuento",
+        "tu": "cuentas",
+        "el": "cuenta",
+        "nosotros": "contamos",
+        "vosotros": "contáis",
+        "ellos": "cuentan"
+      }
+    },
+    {
+      "infinitif": "pensar",
+      "traduction": "penser",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "pienso",
+        "tu": "piensas",
+        "el": "piensa",
+        "nosotros": "pensamos",
+        "vosotros": "pensáis",
+        "ellos": "piensan"
+      }
+    },
+    {
+      "infinitif": "dormir",
+      "traduction": "dormir",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "duermo",
+        "tu": "duermes",
+        "el": "duerme",
+        "nosotros": "dormimos",
+        "vosotros": "dormís",
+        "ellos": "duermen"
+      }
+    },
+    {
+      "infinitif": "pedir",
+      "traduction": "demander / commander",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "pido",
+        "tu": "pides",
+        "el": "pide",
+        "nosotros": "pedimos",
+        "vosotros": "pedís",
+        "ellos": "piden"
+      }
+    },
+    {
+      "infinitif": "seguir",
+      "traduction": "suivre / continuer",
+      "type": "irrégulier",
+      "conjugaison": {
+        "yo": "sigo",
+        "tu": "sigues",
+        "el": "sigue",
+        "nosotros": "seguimos",
+        "vosotros": "seguís",
+        "ellos": "siguen"
+      }
+    }
+  ]
+}
