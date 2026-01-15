@@ -28,15 +28,27 @@
             </div>
             <div class="quiz-options" id="quizOptions"></div>
         </div>
-        <div id="gameOverContainer" style="display: none;"><div class="game-over"><h2>Quiz terminé!</h2><div class="final-score">Score: <span id="finalScore">0</span>/<span id="finalMax">10</span></div><div style="font-size: 1.5em; color: #26D07C; margin-bottom: 30px;"><span id="percentageValue">0</span>%</div><button class="btn btn-primary" onclick="recommencer()">Recommencer</button></div></div>
+        <div id="gameOverContainer" style="display: none;"><div class="game-over"><h2>Quiz terminé!</h2><div class="final-score">Score: <span id="finalScore">0</span>/<span id="finalMax">10</span></div><div style="font-size: 1.5em; color: #26D07C; margin-bottom: 30px;"><span id="percentageValue">0</span>%</div><div id="bonusMessage" style="display: none; color: #FFB800; font-size: 1.2em; margin: 20px 0; font-weight: bold;">🎮 Parfait! Question bonus Valorant 🎮</div><button class="btn btn-primary" onclick="recommencer()">Recommencer</button></div></div>
+        <div id="bonusContainer" style="display: none;">
+            <div class="card-vocabulary">
+                <img id="bonusPhoto" src="" alt="Joueur" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
+                <div class="word-display" id="bonusNickname" style="font-size: 1.3em;">Joueur</div>
+                <div class="word-label" id="bonusQuestion" style="margin-top: 20px;">Question</div>
+            </div>
+            <div class="quiz-options" id="bonusOptions"></div>
+        </div>
     </div>
     <script>
         let verbesList = [];
+        let valorantPlayers = [];
         let verbeActuel = null;
         let pronounActuel = null;
         let score = 0;
         let totalQuestions = 0;
         let maxQuestions = 10;
+        let bonusAnswer = null;
+        let bonusPlayer = null;
+        let bonusQuestionType = null;
         
         const pronouns = {
             "yo": "je",
@@ -52,10 +64,26 @@
                 const res = await fetch('present.json?t=' + Date.now());
                 const data = await res.json();
                 verbesList = data.verbes_present;
-                nouvelVerbe();
+                chargerValorant();
             } catch(e) {
                 console.error('Erreur:', e);
                 document.getElementById('wordDisplay').textContent = 'Erreur chargement';
+            }
+        }
+        
+        async function chargerValorant() {
+            try {
+                const res = await fetch('valorant.json?t=' + Date.now());
+                const data = await res.json();
+                valorantPlayers = [
+                    ...data.Americas,
+                    ...data.EMEA,
+                    ...data.Pacific
+                ];
+                nouvelVerbe();
+            } catch(e) {
+                console.error('Erreur Valorant:', e);
+                nouvelVerbe();
             }
         }
         
@@ -83,6 +111,7 @@
             document.getElementById('scoreValue').textContent = '0';
             document.getElementById('gameContainer').style.display = 'block';
             document.getElementById('gameOverContainer').style.display = 'none';
+            document.getElementById('bonusContainer').style.display = 'none';
             document.getElementById('progressFill').style.width = '0%';
             nouvelVerbe();
         }
@@ -93,6 +122,13 @@
                 document.getElementById('finalMax').textContent = maxQuestions;
                 const pct = Math.round((score / maxQuestions) * 100);
                 document.getElementById('percentageValue').textContent = pct;
+                
+                // Si score parfait et joueurs disponibles
+                if (pct === 100 && valorantPlayers.length > 0) {
+                    genererBonusValorant();
+                    return;
+                }
+                
                 document.getElementById('gameContainer').style.display = 'none';
                 document.getElementById('gameOverContainer').style.display = 'block';
                 return;
@@ -169,6 +205,77 @@
                 };
                 container.appendChild(btn);
             });
+        }
+        
+        function genererBonusValorant() {
+            document.getElementById('gameContainer').style.display = 'none';
+            document.getElementById('gameOverContainer').style.display = 'block';
+            document.getElementById('bonusMessage').style.display = 'block';
+            
+            // Sélectionner un joueur aléatoire
+            bonusPlayer = valorantPlayers[Math.floor(Math.random() * valorantPlayers.length)];
+            
+            // Sélectionner le type de question
+            const types = ['role', 'nationality', 'team', 'first_name', 'last_name'];
+            bonusQuestionType = types[Math.floor(Math.random() * types.length)];
+            
+            // Déterminer la bonne réponse et la question
+            const questionsES = {
+                'role': '¿Cuál es su rol en el equipo?',
+                'nationality': '¿De qué país es?',
+                'team': '¿Cuál es su equipo?',
+                'first_name': '¿Cuál es su nombre de pila?',
+                'last_name': '¿Cuál es su apellido?'
+            };
+            
+            bonusAnswer = bonusPlayer[bonusQuestionType];
+            
+            // Afficher la photo et le nickname
+            document.getElementById('bonusPhoto').src = bonusPlayer.photo;
+            document.getElementById('bonusNickname').textContent = bonusPlayer.nickname;
+            document.getElementById('bonusQuestion').textContent = questionsES[bonusQuestionType];
+            
+            // Générer les options
+            let options = [bonusAnswer];
+            
+            const otherPlayers = valorantPlayers.filter(p => p.nickname !== bonusPlayer.nickname);
+            while (options.length < 4 && otherPlayers.length > 0) {
+                const randomOther = otherPlayers[Math.floor(Math.random() * otherPlayers.length)];
+                const option = randomOther[bonusQuestionType];
+                if (!options.includes(option)) {
+                    options.push(option);
+                }
+            }
+            
+            options = options.sort(() => Math.random() - 0.5);
+            
+            const container = document.getElementById('bonusOptions');
+            container.innerHTML = '';
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = opt;
+                btn.onclick = () => {
+                    const correct = opt === bonusAnswer;
+                    if (correct) {
+                        btn.classList.add('correct');
+                    } else {
+                        btn.classList.add('incorrect');
+                    }
+                    document.querySelectorAll('#bonusOptions .option-btn').forEach(b => {
+                        b.disabled = true;
+                        if (b.textContent === bonusAnswer) b.classList.add('correct');
+                    });
+                    setTimeout(() => {
+                        document.getElementById('bonusContainer').style.display = 'none';
+                        document.getElementById('gameOverContainer').style.display = 'block';
+                    }, 1500);
+                };
+                container.appendChild(btn);
+            });
+            
+            document.getElementById('bonusContainer').style.display = 'block';
         }
         
         function recommencer() {

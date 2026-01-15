@@ -1,0 +1,278 @@
+{
+  "Americas": [
+    {
+      "nickname": "TenZ",
+      "first_name": "Tyson",
+      "last_name": "Ngo",
+      "nationality": "Canada",
+      "team": "Sentinels",
+      "role": "Duelist",
+      "photo": "images/TenZ_at_Masters_Madrid_2024.jpg"
+    },
+    {
+      "nickname": "ScreaM",
+      "first_name": "Adil",
+      "last_name": "Benrlitom",
+      "nationality": "Belgium",
+      "team": "KC (Americas League)",
+      "role": "Duelist",
+      "photo": "images/Scream.jpg"
+    },
+    {
+      "nickname": "Demon1",
+      "first_name": "Max",
+      "last_name": "Mazuryk",
+      "nationality": "USA",
+      "team": "NRG",
+      "role": "Duelist",
+      "photo": "images/Demon1.jpg"
+    },
+    {
+      "nickname": "yay",
+      "first_name": "Jaccob",
+      "last_name": "Whiteaker",
+      "nationality": "USA",
+      "team": "Bleed Esports",
+      "role": "Duelist",
+      "photo": "images/600px-Bleed_yay_at_VCT_Pacific_2024_Kickoff.jpg"
+    },
+    {
+      "nickname": "Marved",
+      "first_name": "Jimmy",
+      "last_name": "Nguyen",
+      "nationality": "Canada",
+      "team": "Sentinels",
+      "role": "Controller",
+      "photo": "images/600px-Marved_at_the_Masters_Reykjavík_2022.png"
+    },
+    {
+      "nickname": "Aspas",
+      "first_name": "Erick",
+      "last_name": "Santos",
+      "nationality": "Brazil",
+      "team": "Leviatán",
+      "role": "Duelist",
+      "photo": "images/600px-MIBR_aspas_at_Valorant_Champions_-_Day_3.jpg"
+    },
+    {
+      "nickname": "Less",
+      "first_name": "Felipe",
+      "last_name": "Basso",
+      "nationality": "Brazil",
+      "team": "LOUD",
+      "role": "Sentinel",
+      "photo": "images/600px-LOUD_Less_at_Masters_Madrid_2024.jpg"
+    },
+    {
+      "nickname": "Saadhak",
+      "first_name": "Matias",
+      "last_name": "Delipetro",
+      "nationality": "Argentina",
+      "team": "LOUD",
+      "role": "IGL / Initiator",
+      "photo": "images/600px-KC_Saadhak_at_VCT_EMEA_Kickoff_2025.jpg"
+    },
+    {
+      "nickname": "pANcada",
+      "first_name": "Bryan",
+      "last_name": "Luna",
+      "nationality": "Brazil",
+      "team": "Sentinels",
+      "role": "Controller",
+      "photo": "images/600px-LOUD_pANcada_at_the_VALORANT_Champions_2022.jpg"
+    },
+    {
+      "nickname": "Zekken",
+      "first_name": "Zachary",
+      "last_name": "Patrone",
+      "nationality": "USA",
+      "team": "Sentinels",
+      "role": "Flex",
+      "photo": "images/600px-Sentinels_Zekken_at_Masters_Madrid.jpg"
+    }
+  ],
+  "EMEA": [
+    {
+      "nickname": "Derke",
+      "first_name": "Nikita",
+      "last_name": "Sirmitev",
+      "nationality": "Finland",
+      "team": "Fnatic",
+      "role": "Duelist",
+      "photo": "images/600px-FNC_Derke_at_VCT_Masters_Tokyo.jpg"
+    },
+    {
+      "nickname": "Leo",
+      "first_name": "Leo",
+      "last_name": "Jannesson",
+      "nationality": "Sweden",
+      "team": "Fnatic",
+      "role": "Initiator",
+      "photo": "images/600px-FNC_Leo_at_VCT_Masters_Tokyo.jpg"
+    },
+    {
+      "nickname": "Boaster",
+      "first_name": "Jake",
+      "last_name": "Howlett",
+      "nationality": "UK",
+      "team": "Fnatic",
+      "role": "IGL",
+      "photo": "images/600px-Fnatic_Boaster_at_VALORANT_Champions_2025.jpg"
+    },
+    {
+      "nickname": "Chronicle",
+      "first_name": "Timofey",
+      "last_name": "Khromov",
+      "nationality": "Russia",
+      "team": "Fnatic",
+      "role": "Flex",
+      "photo": "images/600px-FNC_Chronical_at_VCT_Masters_Tokyo.jpg"
+    },
+    {
+      "nickname": "Nivera",
+      "first_name": "Nabil",
+      "last_name": "Benrlitom",
+      "nationality": "Belgium",
+      "team": "KC",
+      "role": "Flex",
+      "photo": "images/600px-Nivera_at_the_Masters_Reykjavík_2022.jpg"
+    },
+    {
+      "nickname": "Mixwell",
+      "first_name": "Oscar",
+      "last_name": "Cañellas",
+      "nationality": "Spain",
+      "team": "Team Heretics",
+      "role": "Flex",
+      "photo": "images/600px-Mixwell_at_the_Masters_Reykjavík_2022.jpg"
+    },
+    {
+      "nickname": "Koldamenta",
+      "first_name": "Jose Luis",
+      "last_name": "Aranguren",
+      "nationality": "Spain",
+      "team": "KOI",
+      "role": "IGL / Controller",
+      "photo": "images/600px-Koldamenta_at_the_VCT_LOCK_IN_São_Paulo.jpg"
+    },
+    {
+      "nickname": "Fit1nho",
+      "first_name": "Adolfo",
+      "last_name": "Gallego",
+      "nationality": "Spain",
+      "team": "GIANTX",
+      "role": "Duelist",
+      "photo": "images/600px-GIANTX_Fit1nho_at_VCT_2024_EMEA_Kickoff.jpg"
+    },
+    {
+      "nickname": "Shao",
+      "first_name": "Andrey",
+      "last_name": "Shao",
+      "nationality": "Ukraine",
+      "team": "NAVI",
+      "role": "Initiator",
+      "photo": "images/600px-NAVI_Shao_at_VCT_EMEA_Kickoff_2025.jpg"
+    },
+    {
+      "nickname": "cNed",
+      "first_name": "Mehmet",
+      "last_name": "İpek",
+      "nationality": "Turkey",
+      "team": "NAVI",
+      "role": "Duelist",
+      "photo": "images/600px-FUT_cNed_at_VCT_2024_EMEA_Stage_1.jpg"
+    }
+  ],
+  "Pacific": [
+    {
+      "nickname": "Something",
+      "first_name": "Ilya",
+      "last_name": "Petrov",
+      "nationality": "Russia",
+      "team": "Paper Rex",
+      "role": "Duelist",
+      "photo": "images/600px-PRX_something_at_Valorant_Champions_Playoffs_-_Day_4.jpg"
+    },
+    {
+      "nickname": "Jinggg",
+      "first_name": "Wang",
+      "last_name": "Jing Jie",
+      "nationality": "Singapore",
+      "team": "Paper Rex",
+      "role": "Duelist",
+      "photo": "images/600px-PRX_Jinggg_at_Valorant_Champions_2025.jpg"
+    },
+    {
+      "nickname": "f0rsakeN",
+      "first_name": "Jason",
+      "last_name": "Susanto",
+      "nationality": "Indonesia",
+      "team": "Paper Rex",
+      "role": "Flex",
+      "photo": "images/600px-PRX_f0rsaken_at_Valorant_Champions_2025_-_Day_5.jpg"
+    },
+    {
+      "nickname": "Mako",
+      "first_name": "Kim",
+      "last_name": "Myeong-kwan",
+      "nationality": "South Korea",
+      "team": "DRX",
+      "role": "Controller",
+      "photo": "images/600px-DRX_MaKo_at_the_VALORANT_Champions_2024.jpg"
+    },
+    {
+      "nickname": "BuZz",
+      "first_name": "Yu",
+      "last_name": "Byung-chul",
+      "nationality": "South Korea",
+      "team": "DRX",
+      "role": "Duelist",
+      "photo": "images/600px-DRX_BuZz_at_the_VCT_Stage_2_Masters_Copenhagen.jpg"
+    },
+    {
+      "nickname": "Zest",
+      "first_name": "Kim",
+      "last_name": "Gi-seok",
+      "nationality": "South Korea",
+      "team": "DRX",
+      "role": "Initiator",
+      "photo": "images/600px-Bleed_Zest_at_VCT_2024_Pacific_Stage_1.jpg"
+    },
+    {
+      "nickname": "Meteor",
+      "first_name": "Kim",
+      "last_name": "Tae-o",
+      "nationality": "South Korea",
+      "team": "Gen.G",
+      "role": "Duelist",
+      "photo": "images/600px-T1_Meteor_at_Valorant_Champions_2025.jpg"
+    },
+    {
+      "nickname": "T3xture",
+      "first_name": "Kim",
+      "last_name": "Na-ra",
+      "nationality": "South Korea",
+      "team": "T1",
+      "role": "Duelist",
+      "photo": "images/600px-GenG_t3xture_at_VCT_Pacific_2024_Kickoff.jpg"
+    },
+    {
+      "nickname": "Sayaplayer",
+      "first_name": "Ha",
+      "last_name": "Jung-woo",
+      "nationality": "South Korea",
+      "team": "T1",
+      "role": "Duelist",
+      "photo": "images/600px-T1_Sayaplayer_at_VCT_Pacific_2024_Kickoff.jpg"
+    },
+    {
+      "nickname": "Laz",
+      "first_name": "Koji",
+      "last_name": "Uesugi",
+      "nationality": "Japan",
+      "team": "ZETA Division",
+      "role": "Sentinel",
+      "photo": "images/600px-ZETA_Laz_at_VCL_Japan_2025_split_2_Playoff.jpg"
+    }
+  ]
+}
