@@ -628,7 +628,7 @@ h3 {
 
 @media (max-width: 600px) {
     .navbar {
-        padding: 10px 20px;
+        padding: 10px 15px;
     }
 
     .navbar-content {
@@ -636,31 +636,198 @@ h3 {
     }
 
     .navbar h1 {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .container {
-        margin: 20px 10px;
-        padding: 20px;
-        border-radius: 15px;
+        margin: 15px 10px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
     }
 
     .back-btn {
-        padding: 8px 15px;
+        padding: 10px 15px;
+        font-size: 0.85em;
+        top: 70px;
+        left: 10px;
+    }
+
+    .hero {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .hero h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 0.95em;
+    }
+
+    .stats {
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.5em;
+    }
+
+    .stat-label {
+        font-size: 0.8em;
+    }
+
+    .quiz-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .quiz-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .quiz-icon {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+    }
+
+    .quiz-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 12px;
+    }
+
+    .quiz-card p {
         font-size: 0.9em;
+    }
+
+    .feature-badge {
+        padding: 5px 10px;
+        font-size: 0.75em;
+    }
+
+    .btn-start {
+        padding: 16px 20px;
+        font-size: 0.95em;
+        margin-top: 15px;
+    }
+
+    .card-vocabulary {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .word-display {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        word-break: break-word;
+    }
+
+    .word-label {
+        font-size: 1em;
+    }
+
+    .pronoun-display {
+        font-size: 1.1em;
+        padding: 8px 15px;
+    }
+
+    .verb-info {
+        font-size: 0.85em;
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .option-btn {
+        padding: 16px;
+        font-size: 1em;
+        min-height: 50px;
+        border-radius: 8px;
+    }
+
+    .listen-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        margin-top: 12px;
+    }
+
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .score-display {
+        font-size: 1.3em;
     }
 
     .settings-section {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .settings-section label {
+        font-size: 0.95em;
     }
 
     .settings-section select {
         width: 100%;
+        padding: 10px;
+        font-size: 1em;
     }
 
     .toggle-section {
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .toggle-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .progress-bar {
+        height: 6px;
+        margin-bottom: 25px;
+    }
+
+    .game-over h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .final-score {
+        font-size: 1.5em;
+    }
+
+    .section h2 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
     }
 }
